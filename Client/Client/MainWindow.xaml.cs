@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Client.InternalData;
 using Client.ServiceReference1;
 
 namespace Client
@@ -32,7 +33,10 @@ namespace Client
 
         private void btLogin_Click(object sender, RoutedEventArgs e)
         {
-            client.LogIn(tbUsername.Text, tbPassword.Text);
+            LoginUser user = new LoginUser();
+            user.Username = tbUsername.Text;
+            user.Password = tbPassword.Text;
+            LoggedUser.User = client.LogIn(user);
         }
     }
 }

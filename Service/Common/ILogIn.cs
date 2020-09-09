@@ -11,6 +11,6 @@ namespace Common
     public interface ILogIn
     {
         [OperationContract]
-        int LogIn(string username, string password);
+        Osoba LogIn(LoginUser user);
     }
 }

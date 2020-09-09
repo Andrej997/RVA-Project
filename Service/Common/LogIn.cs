@@ -9,10 +9,18 @@ namespace Common
 {
     public class LogIn : ILogIn
     {
-        int ILogIn.LogIn(string username, string password)
+        Osoba ILogIn.LogIn(LoginUser user)
         {
-            Console.WriteLine(username + " " + password);
-            return 1;
+            Osoba logged;
+            using (CommonContex commonContex = new CommonContex())
+            {
+               logged =  commonContex.Osoba
+                    .Where(x => x.Username == user.Username && x.Password == user.Password)
+                    .FirstOrDefault();
+
+                Console.WriteLine("Logged : " + logged.Username + " " + logged.Password);
+            }
+            return logged;
         }
     }
 }

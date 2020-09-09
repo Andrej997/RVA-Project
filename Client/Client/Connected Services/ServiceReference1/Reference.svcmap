@@ -23,8 +23,9 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="LogIn.wsdl" MetadataType="Wsdl" ID="b7d9ee1f-48f6-4131-bdb7-919acfa4a2bc" SourceId="1" SourceUrl="http://localhost:8000/Common?wsdl" />
-    <MetadataFile FileName="Common.xsd" MetadataType="Schema" ID="83677454-780f-4c47-8f17-8539c55c71f2" SourceId="1" SourceUrl="http://localhost:8000/Common?xsd=xsd1" />
+    <MetadataFile FileName="Common2.xsd" MetadataType="Schema" ID="1565ffe4-eeef-45e7-80a3-53de51c3df09" SourceId="1" SourceUrl="http://localhost:8000/Common?xsd=xsd2" />
     <MetadataFile FileName="Common.disco" MetadataType="Disco" ID="9bf2d6b9-8ffe-4688-97bb-ce423e082936" SourceId="1" SourceUrl="http://localhost:8000/Common?disco" />
+    <MetadataFile FileName="Common.xsd" MetadataType="Schema" ID="83677454-780f-4c47-8f17-8539c55c71f2" SourceId="1" SourceUrl="http://localhost:8000/Common?xsd=xsd1" />
     <MetadataFile FileName="Common1.xsd" MetadataType="Schema" ID="1324e81d-0222-4268-b9e2-138369998417" SourceId="1" SourceUrl="http://localhost:8000/Common?xsd=xsd0" />
   </Metadata>
   <Extensions>

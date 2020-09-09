@@ -13,31 +13,7 @@ namespace Service
     {
         static void Main(string[] args)
         {
-            Uri baseAddress = new Uri("http://localhost:8000/Common");
-
-            ServiceHost host = new ServiceHost(typeof(LogIn), baseAddress);
-            try
-            {
-                host.AddServiceEndpoint(typeof(ILogIn), new WSHttpBinding(), "Common");
-
-                ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
-                smb.HttpGetEnabled = true;
-                host.Description.Behaviors.Add(smb);
-
-                host.Open();
-
-                Console.WriteLine("The service is ready.");
-
-                Console.WriteLine("Press <Enter> to terminate the service.");
-                Console.WriteLine();
-                Console.ReadLine();
-                host.Close();
-            }
-            catch (CommunicationException ce)
-            {
-                Console.WriteLine("An exception occurred: {0}", ce.Message);
-                host.Abort();
-            }
+            Connect.ConnectWCF();
         }
     }
 }
