@@ -1,0 +1,7 @@
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Common\bin\Debug\Common.dll.config
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Common\bin\Debug\Common.dll
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Common\bin\Debug\Common.pdb
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Common\obj\Debug\Common.csprojAssemblyReference.cache
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Common\obj\Debug\Common.dll
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Common\obj\Debug\Common.pdb

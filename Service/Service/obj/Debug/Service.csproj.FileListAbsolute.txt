@@ -1,0 +1,11 @@
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Service\bin\Debug\Service.exe.config
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Service\bin\Debug\Service.exe
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Service\bin\Debug\Service.pdb
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Service\bin\Debug\Common.dll
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Service\bin\Debug\Common.pdb
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Service\bin\Debug\Common.dll.config
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Service\obj\Debug\Service.csprojAssemblyReference.cache
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Service\obj\Debug\Service.csproj.CopyComplete
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Service\obj\Debug\Service.exe
+D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Service\obj\Debug\Service.pdb
