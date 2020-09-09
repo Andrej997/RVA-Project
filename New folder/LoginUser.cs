@@ -13,7 +13,10 @@ using System.IO;
 
 
 
-public class LoginUser : Osoba_abs {
+public class LoginUser {
+	private string password;
+	private string username;
+
 
 	public LoginUser(){
 
@@ -30,7 +33,7 @@ public class LoginUser : Osoba_abs {
 
 	}
 
-	public override string Password{
+	public string Password{
 		get{
 			return password;
 		}
@@ -39,33 +42,12 @@ public class LoginUser : Osoba_abs {
 		}
 	}
 
-	public override string Username{
+	public string Username{
 		get{
 			return username;
 		}
 		set{
 			username = value;
-		}
-	}
-
-	public override int Id {
-		get
-		{
-			return id;
-		}
-		set
-		{
-			id = value;
-		}
-	}
-	public override int Role {
-		get
-		{
-			return role;
-		}
-		set
-		{
-			role = value;
 		}
 	}
 }//end LoginUser
