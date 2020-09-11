@@ -13,10 +13,14 @@ using System.IO;
 
 
 
-public class Osoba : Osoba_abs {
+public abstract class Osoba {
 
 	protected string name;
 	protected string surname;
+	protected int id;
+	protected string password;
+	protected int role;
+	protected string username;
 
 	public Osoba(){
 
@@ -26,95 +30,39 @@ public class Osoba : Osoba_abs {
 
 	}
 
-	public override int Id{
-		get{
-			return id;
-		}
-		set{
-			id = value;
-		}
+	protected abstract int Id{
+		get;
+		set;
 	}
 
-	public virtual string Name{
-		get{
-			return name;
-		}
-		set{
-			name = value;
-		}
+	protected abstract string Name{
+		get;
+		set;
 	}
 
-	public override string Password{
-		get{
-			return password;
-		}
-		set{
-			password = value;
-		}
+	protected abstract string Password{
+		get;
+		set;
 	}
 
-	public override int Role{
-		get{
-			return role;
-		}
-		set{
-			role = value;
-		}
+	protected abstract int Role{
+		get;
+		set;
 	}
 
-	public virtual string Surname{
-		get{
-			return surname;
-		}
-		set{
-			surname = value;
-		}
+	protected abstract string Surname{
+		get;
+		set;
 	}
 
-	public override string Username{
-		get{
-			return username;
-		}
-		set{
-			username = value;
-		}
+	protected abstract string Username{
+		get;
+		set;
+	}
+
+	public override string  ToString(){
+
+		return $"{Name} {Surname} [{Username}-{Role}]";
 	}
 
 }//end Osoba
-
-public abstract class Osoba_abs {
-
-	protected int id;
-	protected string password;
-	protected int role;
-	protected string username;
-
-	public Osoba_abs(){
-
-	}
-
-	~Osoba_abs(){
-
-	}
-
-	public abstract int Id{
-		get;
-		set;
-	}
-
-	public abstract string Password{
-		get;
-		set;
-	}
-
-	public abstract int Role{
-		get;
-		set;
-	}
-
-	public abstract string Username{
-		get;
-		set;
-	}
-
-}//end Osoba_abs

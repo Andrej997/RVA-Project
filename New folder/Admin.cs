@@ -23,7 +23,7 @@ public class Admin : Osoba {
 
 	}
 
-	public override int Id{
+	protected override int Id{
 		get{
 			return id;
 		}
@@ -32,7 +32,7 @@ public class Admin : Osoba {
 		}
 	}
 
-	public override string Name{
+	protected override string Name{
 		get{
 			return name;
 		}
@@ -41,7 +41,16 @@ public class Admin : Osoba {
 		}
 	}
 
-	public override int Role{
+	protected override string Password{
+		get{
+			return password;
+		}
+		set{
+			password = value;
+		}
+	}
+
+	protected override int Role{
 		get{
 			return role;
 		}
@@ -50,7 +59,7 @@ public class Admin : Osoba {
 		}
 	}
 
-	public override string Surname{
+	protected override string Surname{
 		get{
 			return surname;
 		}
@@ -59,7 +68,12 @@ public class Admin : Osoba {
 		}
 	}
 
-	public override string Username{
+	public override string ToString(){
+
+		return $"{Name} {Surname} [{Username}-{Role}]";
+	}
+
+	protected override string Username{
 		get{
 			return username;
 		}
@@ -67,5 +81,6 @@ public class Admin : Osoba {
 			username = value;
 		}
 	}
+
 
 }//end Admin

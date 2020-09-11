@@ -25,7 +25,7 @@ public class Trener : Osoba {
 
 	}
 
-	public override int Id{
+	protected override int Id{
 		get{
 			return id;
 		}
@@ -34,7 +34,7 @@ public class Trener : Osoba {
 		}
 	}
 
-	public override string Name{
+	protected override string Name{
 		get{
 			return name;
 		}
@@ -43,13 +43,45 @@ public class Trener : Osoba {
 		}
 	}
 
-	public override string Surname{
+	protected override string Surname{
 		get{
 			return surname;
 		}
 		set{
 			surname = value;
 		}
+	}
+
+	protected override int Role{
+		get{
+			return role;
+		}
+		set{
+			role = value;
+		}
+	}
+
+	protected override string Username{
+		get{
+			return username;
+		}
+		set{
+			username = value;
+		}
+	}
+
+	protected override string Password{
+		get{
+			return password;
+		}
+		set{
+			password = value;
+		}
+	}
+
+	public override string ToString(){
+
+		return $"{Name} {Surname} [{Username}-{Role}]";
 	}
 
 }//end Trener
