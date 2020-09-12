@@ -165,11 +165,23 @@
     <Compile Include="..\..\New folder\Admin.cs">
       <Link>Model\Admin.cs</Link>
     </Compile>
+    <Compile Include="..\..\New folder\DBService.cs">
+      <Link>Service\DBService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\New folder\IDBService.cs">
+      <Link>Service\IDBService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\New folder\LogInOut.cs">
+      <Link>Service\LogInOut.cs</Link>
+    </Compile>
     <Compile Include="..\..\New folder\LoginUser.cs">
       <Link>Model\LoginUser.cs</Link>
     </Compile>
     <Compile Include="..\..\New folder\Osoba.cs">
       <Link>Model\Osoba.cs</Link>
+    </Compile>
+    <Compile Include="..\..\New folder\Proxy.cs">
+      <Link>Service\Proxy.cs</Link>
     </Compile>
     <Compile Include="..\..\New folder\Trener.cs">
       <Link>Model\Trener.cs</Link>
@@ -181,19 +193,11 @@
       <Link>Model\Vežbac.cs</Link>
     </Compile>
     <Compile Include="CommonContex.cs" />
-    <Compile Include="ILogIn.cs" />
-    <Compile Include="LogIn.cs" />
-    <Compile Include="Migrations\20200909184935_Initial_Vezbac.cs" />
-    <Compile Include="Migrations\20200909184935_Initial_Vezbac.designer.cs">
-      <DependentUpon>20200909184935_Initial_Vezbac.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20200909185154_Admin.cs" />
-    <Compile Include="Migrations\20200909185154_Admin.designer.cs">
-      <DependentUpon>20200909185154_Admin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20200909202947_Osoba.cs" />
-    <Compile Include="Migrations\20200909202947_Osoba.designer.cs">
-      <DependentUpon>20200909202947_Osoba.cs</DependentUpon>
+    <Compile Include="IContract.cs" />
+    <Compile Include="Contract.cs" />
+    <Compile Include="Migrations\20200912162631_Initial.cs" />
+    <Compile Include="Migrations\20200912162631_Initial.designer.cs">
+      <DependentUpon>20200912162631_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\CommonContexModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -202,6 +206,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -4,19 +4,62 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client"
+        xmlns:view="clr-namespace:Client.View"
+        xmlns:viewModel="clr-namespace:Client.ViewModel"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Login" Height="277.5" Width="479">
+        Title="RVA Project" 
+        Height="450" Width="800">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+            <view:HomeView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+            <view:LoginView/>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="49*"/>
-            <ColumnDefinition Width="744*"/>
-        </Grid.ColumnDefinitions>
-        <Label x:Name="lUsername" Content="Username" HorizontalAlignment="Left" Margin="85,67,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox x:Name="tbUsername" HorizontalAlignment="Left" Height="24" Margin="173,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <Label x:Name="lPassword" Content="Password" HorizontalAlignment="Left" Margin="85,141,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox x:Name="tbPassword" HorizontalAlignment="Left" Height="24" Margin="173,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <Button x:Name="btLogin" Content="Login" Grid.Column="1" HorizontalAlignment="Left" Margin="197,214,0,0" VerticalAlignment="Top" Width="76" Click="btLogin_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
+        <DockPanel Grid.Row="1" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Menu DockPanel.Dock="Top" FontSize="12" >
+                <Menu.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="LightGray" Offset="0"/>
+                        <GradientStop Color="Black" Offset="1"/>
+                    </LinearGradientBrush>
+                </Menu.Background>
+
+                <MenuItem Width="80" Command="{Binding Navigacija}" CommandParameter="Home" ToolTip="Home page" >
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Foreground="White" Text="Home" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+
+                <MenuItem Width="80" Command="{Binding Navigacija}" CommandParameter="Login" ToolTip="Login page" >
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Foreground="White" Text="Login" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <Grid Grid.Row="2">
+            <ContentControl Content="{Binding TrenutniViewModel}"/>
+        </Grid>
     </Grid>
 </Window>

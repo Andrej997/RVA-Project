@@ -13,16 +13,29 @@ namespace Service
     {
         public static void ConnectWCF()
         {
-            Uri baseAddress = new Uri("http://localhost:8000/Common");
+            Uri baseAddress = new Uri("net.tcp://localhost:53200/Common");
 
-            ServiceHost host = new ServiceHost(typeof(LogIn), baseAddress);
+            //WSHttpBinding binding = new WSHttpBinding();
+            //binding.Security.Mode = SecurityMode.Transport;
+            //binding.Security.Transport.ClientCredentialType =
+            //      HttpClientCredentialType.None;
+
+            NetTcpBinding binding = new NetTcpBinding();
+            binding.MaxReceivedMessageSize = 1000000;
+            binding.MaxBufferPoolSize = 1000000;
+            binding.MaxBufferSize = 1000000;
+            binding.OpenTimeout = TimeSpan.FromMinutes(2);
+            binding.SendTimeout = TimeSpan.FromMinutes(2);
+            binding.ReceiveTimeout = TimeSpan.FromMinutes(10);
+
+            ServiceHost host = new ServiceHost(typeof(Contract));
             try
             {
-                host.AddServiceEndpoint(typeof(ILogIn), new WSHttpBinding(), "Common");
+                host.AddServiceEndpoint(typeof(IContract), binding, baseAddress);
 
-                ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
-                smb.HttpGetEnabled = true;
-                host.Description.Behaviors.Add(smb);
+                //ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
+                //smb.HttpGetEnabled = true;
+                //host.Description.Behaviors.Add(smb);
 
                 host.Open();
 

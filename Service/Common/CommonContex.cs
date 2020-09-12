@@ -9,7 +9,10 @@ namespace Common
 {
     public class CommonContex : DbContext
     {
-        public DbSet<Osoba> Osoba { get; set; }
+        public DbSet<Trener> Trener { get; set; }
+        public DbSet<Vezbac> Vezbac { get; set; }
+        public DbSet<Admin> Admin { get; set; }
+        public DbSet<Trening> Trening { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
