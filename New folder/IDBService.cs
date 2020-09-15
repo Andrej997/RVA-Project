@@ -13,7 +13,7 @@ using System.IO;
 
 
 
-public interface IDBService    {
+public interface IDBService      {
 
 	/// 
 	/// <param name="loginUser"></param>
@@ -25,5 +25,17 @@ public interface IDBService    {
 
 	/// 
 	/// <param name="osoba"></param>
-	void LogOut(Osoba osoba);
+	void LogOut(string username);
+
+	/// 
+	/// <param name="admin"></param>
+	string AddAdmin(Admin admin);
+
+	/// 
+	/// <param name="vezbac"></param>
+	string AddVezbav(Vezbac vezbac);
+
+	List<Admin> GetAllAdmins();
+
+	List<Vezbac> GetAllVezbace();
 }//end IDBService

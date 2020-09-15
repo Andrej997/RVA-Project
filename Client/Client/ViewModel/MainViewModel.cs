@@ -11,6 +11,8 @@ namespace Client.ViewModel
         public MyICommand<string> Navigacija { get; private set; }
 
         private HomeViewModel homeViewModel;
+        private CRUDUserViewModel cRUDUser;
+        private GetAllAdminsViewModel GetAllAdminsViewModel;
         private LoginViewModel loginViewModel;
 
         private BindableBase trenutniViewModel;
@@ -26,10 +28,23 @@ namespace Client.ViewModel
         public MainViewModel()
         {
             Connect();
-            homeViewModel = new HomeViewModel();
-            loginViewModel = new LoginViewModel();
+            SetProperties();
+        }
+
+        private void SetProperties()
+        {
+            CreateViewModels();
+
             Navigacija = new MyICommand<string>(Navig);
             TrenutniViewModel = homeViewModel;
+        }
+
+        public void CreateViewModels()
+        {
+            homeViewModel = new HomeViewModel();
+            cRUDUser = new CRUDUserViewModel();
+            loginViewModel = new LoginViewModel();
+            GetAllAdminsViewModel = new GetAllAdminsViewModel();
         }
 
         public void Navig(string odabir)
@@ -38,6 +53,12 @@ namespace Client.ViewModel
             {
                 case "Home":
                     TrenutniViewModel = homeViewModel;
+                    break;
+                case "Create user":
+                    TrenutniViewModel = cRUDUser;
+                    break;
+                case "Get admins":
+                    TrenutniViewModel = GetAllAdminsViewModel;
                     break;
                 case "Login":
                     TrenutniViewModel = loginViewModel;

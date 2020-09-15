@@ -11,5 +11,9 @@ namespace Client.InternalData
     {
         public static IContract service { get; set; }
         public static Osoba ulogovanaOsova { get; set; }
+
+        public static bool IsLoggedIn() => ulogovanaOsova == null;
+
+        public static bool IsAdmin() => ulogovanaOsova.Role == 0;
     }
 }

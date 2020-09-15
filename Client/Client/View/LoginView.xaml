@@ -14,9 +14,11 @@
     <Grid>
         <TextBox x:Name="lUsername" HorizontalAlignment="Left" Height="24" 
                  Margin="382,106,0,0" TextWrapping="Wrap" Text="{Binding Username}" 
+                 Visibility="{Binding btnLogInVisibility}"
                  VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="lPassword" HorizontalAlignment="Left" Height="22" 
                  Margin="382,166,0,0" TextWrapping="Wrap" Text="{Binding Password}" 
+                 Visibility="{Binding btnLogInVisibility}"
                  VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label" Content="Username" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,102,0,0"/>
         <Label x:Name="label1" Content="Password" HorizontalAlignment="Left" Margin="290,166,0,0" VerticalAlignment="Top"/>
@@ -25,7 +27,12 @@
                Margin="52,49,0,0" VerticalAlignment="Top" Width="212" Height="26"/>
         <Button x:Name="button" Content="Login" HorizontalAlignment="Left" 
                 Command="{Binding Login}"
-                Margin="382,222,0,0" VerticalAlignment="Top" Width="76"/>
+                Visibility="{Binding btnLogInVisibility}"
+                Margin="382,222,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button1" Content="Logout" HorizontalAlignment="Left" 
+                Command="{Binding Logout}"
+                Visibility="{Binding btnLogOutVisibility}"
+                Margin="382,222,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </UserControl>

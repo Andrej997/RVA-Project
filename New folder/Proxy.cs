@@ -27,7 +27,7 @@ public class Proxy : IDBService {
 
 	public void LogAccess(string message)
 	{
-		Console.WriteLine(message);
+		Console.WriteLine($"[{DateTime.Now}] -- {message}");
 		// TO DO: loguj u fajl
 	}
 
@@ -44,7 +44,7 @@ public class Proxy : IDBService {
 		var admin = realService.FindAdmin(loginUser);
 		if (admin != null)
 		{
-			LogAccess($"{DateTime.Now} Admin [{admin.Username}] logged in!");
+			LogAccess($"Admin [{admin.Username}] logged in!");
 		}
 
 		return admin;
@@ -57,7 +57,7 @@ public class Proxy : IDBService {
 		var vezbac = realService.FindVezbac(loginUser);
 		if (vezbac != null)
 		{
-			LogAccess($"{DateTime.Now} Vezbac [{vezbac.Username}] logged in!");
+			LogAccess($"Vezbac [{vezbac.Username}] logged in!");
 		}
 
 		return vezbac;
@@ -65,9 +65,42 @@ public class Proxy : IDBService {
 
 	/// 
 	/// <param name="osoba"></param>
-	public void LogOut(Osoba osoba){
+	public void LogOut(string username)
+	{
 
-		LogAccess($"{DateTime.Now} {osoba.Username} logged out!");
+		LogAccess($"{username} logged out!");
+	}
+
+	/// 
+	/// <param name="admin"></param>
+	public string AddAdmin(Admin admin){
+
+		var message = realService.AddAdmin(admin);
+		LogAccess($"{DateTime.Now} {message}");
+		return message;
+	}
+
+	/// 
+	/// <param name="vezbac"></param>
+	public string AddVezbav(Vezbac vezbac){
+
+		var message = realService.AddVezbav(vezbac);
+		LogAccess($"{DateTime.Now} {message}");
+		return message;
+	}
+
+	public List<Admin> GetAllAdmins(){
+
+		var list = realService.GetAllAdmins();
+		LogAccess($"Got {list.Count} admins from database");
+		return list;
+	}
+
+	public List<Vezbac> GetAllVezbace(){
+
+		var list = realService.GetAllVezbace();
+		LogAccess($"Got {list.Count} vezbace from database");
+		return list;
 	}
 
 }//end Proxy

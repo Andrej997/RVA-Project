@@ -11,11 +11,7 @@ namespace Client
         public bool IsToolTipVisible
         {
             get { return isToolTipVisible; }
-            set
-            {
-                isToolTipVisible = value;
-                //OnPropertyChanged("isToolTipVisible");
-            }
+            set { isToolTipVisible = value; }
         }
 
         protected virtual void SetProperty<T>(ref T member, T val,
@@ -26,9 +22,6 @@ namespace Client
             member = val;
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
-
-
-
 
         protected virtual void OnPropertyChanged(string propertyName)
         {

@@ -12,11 +12,34 @@ namespace Common
         private DBService service;
         private Proxy proxy;
         private LogInOut LogInOut;
+        private CRUDUser CRUDUser;
+
         public Contract()
         {
             service = new DBService();
             proxy = new Proxy(service);
             LogInOut = new LogInOut();
+            CRUDUser = new CRUDUser();
+        }
+
+        public string CreateAdmin(Admin admin)
+        {
+            return CRUDUser.CreateAdmin(admin, proxy);
+        }
+
+        public string CreateVezbac(Vezbac vezbac)
+        {
+            return CRUDUser.CreateVezbac(vezbac, proxy);
+        }
+
+        public List<Admin> GetAllAdmins()
+        {
+            return CRUDUser.GetAllAdmins(proxy);
+        }
+
+        public List<Admin> GetAllVezbace()
+        {
+            return CRUDUser.GetAllAdmins(proxy);
         }
 
         public Admin LogInAdmin(LoginUser user)
@@ -29,9 +52,9 @@ namespace Common
             return LogInOut.LoginVezbac(user, proxy);
         }
 
-        public void LogOut(Osoba osoba)
+        public void LogOut(string username)
         {
-            LogInOut.Logout(osoba);
+            LogInOut.Logout(username, proxy);
         }
     }
 }

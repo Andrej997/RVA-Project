@@ -17,7 +17,15 @@
         <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
             <view:HomeView/>
         </DataTemplate>
-        
+
+        <DataTemplate DataType="{x:Type viewModel:CRUDUserViewModel}">
+            <view:CRUDUserView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:GetAllAdminsViewModel}">
+            <view:GetAllAdminsView/>
+        </DataTemplate>
+
         <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
             <view:LoginView/>
         </DataTemplate>
@@ -38,10 +46,31 @@
                     </LinearGradientBrush>
                 </Menu.Background>
 
-                <MenuItem Width="80" Command="{Binding Navigacija}" CommandParameter="Home" ToolTip="Home page" >
+                <MenuItem Width="80" Command="{Binding Navigacija}" CommandParameter="Home" 
+                          ToolTip="Home page">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal" >
                             <TextBlock Foreground="White" Text="Home" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+
+                <MenuItem Width="80" Command="{Binding Navigacija}" CommandParameter="Create user" 
+                          ToolTip="Create a new user">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Foreground="White" Text="Create user" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+
+                <MenuItem Width="80" Command="{Binding Navigacija}" CommandParameter="Get admins" 
+                          ToolTip="Get all admins">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Foreground="White" Text="Get admins" 
                                        HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </StackPanel>
                     </MenuItem.Header>

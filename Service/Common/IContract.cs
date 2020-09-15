@@ -17,6 +17,18 @@ namespace Common
         Vezbac LogInVezbac(LoginUser user);
 
         [OperationContract]
-        void LogOut(Osoba osoba);
+        void LogOut(string username);
+
+        [OperationContract]
+        string CreateAdmin(Admin admin);
+
+        [OperationContract]
+        string CreateVezbac(Vezbac vezbac);
+
+        [OperationContract]
+        List<Admin> GetAllAdmins();
+
+        [OperationContract]
+        List<Admin> GetAllVezbace();
     }
 }

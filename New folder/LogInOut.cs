@@ -41,8 +41,9 @@ public class LogInOut {
 
 	/// 
 	/// <param name="osoba"></param>
-	public void Logout(Osoba osoba){
-
+	public void Logout(string username, IDBService service)
+	{
+		service.LogOut(username);
 	}
 
 }//end LogInOut

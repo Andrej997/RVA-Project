@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\FAX\8.SEMESTAR\RVA\RVA-Project\Client\Client\App.xaml
-3-521698489
+52113625334
 
-16-470702073
+20509082666
 18784648477
-MainWindow.xaml;View\HomeView.xaml;View\LoginView.xaml;
+MainWindow.xaml;View\CRUDUserView.xaml;View\GetAllAdminsView.xaml;View\HomeView.xaml;View\LoginView.xaml;
 
-False
+True
 

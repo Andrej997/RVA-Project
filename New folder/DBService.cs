@@ -53,8 +53,73 @@ public class DBService : IDBService {
 
 	/// 
 	/// <param name="osoba"></param>
-	public void LogOut(Osoba osoba){
+	public void LogOut(string username)
+	{
 
+	}
+
+	/// 
+	/// <param name="admin"></param>
+	public string AddAdmin(Admin admin){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				var ret = commonContex
+					.Admin
+					.Add(admin);
+				commonContex.SaveChanges();
+				return "Admin successfully created!";
+			}
+			catch (Exception)
+			{
+				return "Faild to create admin!";
+			}
+		}
+	}
+
+	/// 
+	/// <param name="vezbac"></param>
+	public string AddVezbav(Vezbac vezbac){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				var ret = commonContex
+					.Vezbac
+					.Add(vezbac);
+				commonContex.SaveChanges();
+				return "Vezbac successfully created!";
+			}
+			catch (Exception)
+			{
+				return "Faild to create vezbac!";
+			}
+		}
+	}
+
+	public List<Admin> GetAllAdmins(){
+
+		List<Admin> list;
+		using (CommonContex commonContex = new CommonContex())
+		{
+			list = commonContex.Admin
+				.ToList();
+		}
+		return list;
+	}
+
+	public List<Vezbac> GetAllVezbace(){
+
+		List<Vezbac> list;
+		using (CommonContex commonContex = new CommonContex())
+		{
+			list = commonContex.Vezbac
+				.ToList();
+		}
+		return list;
 	}
 
 }//end DBService

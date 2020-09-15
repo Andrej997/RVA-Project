@@ -165,6 +165,9 @@
     <Compile Include="..\..\New folder\Admin.cs">
       <Link>Model\Admin.cs</Link>
     </Compile>
+    <Compile Include="..\..\New folder\CRUDUser.cs">
+      <Link>Service\CRUDUser.cs</Link>
+    </Compile>
     <Compile Include="..\..\New folder\DBService.cs">
       <Link>Service\DBService.cs</Link>
     </Compile>
@@ -182,6 +185,9 @@
     </Compile>
     <Compile Include="..\..\New folder\Proxy.cs">
       <Link>Service\Proxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\New folder\Role.cs">
+      <Link>Model\Role.cs</Link>
     </Compile>
     <Compile Include="..\..\New folder\Trener.cs">
       <Link>Model\Trener.cs</Link>
