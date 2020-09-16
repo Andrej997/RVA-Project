@@ -29,6 +29,6 @@ namespace Common
         List<Admin> GetAllAdmins();
 
         [OperationContract]
-        List<Admin> GetAllVezbace();
+        List<Vezbac> GetAllVezbace();
     }
 }

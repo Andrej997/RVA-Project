@@ -37,9 +37,9 @@ namespace Common
             return CRUDUser.GetAllAdmins(proxy);
         }
 
-        public List<Admin> GetAllVezbace()
+        public List<Vezbac> GetAllVezbace()
         {
-            return CRUDUser.GetAllAdmins(proxy);
+            return CRUDUser.GetAllVezbace(proxy);
         }
 
         public Admin LogInAdmin(LoginUser user)

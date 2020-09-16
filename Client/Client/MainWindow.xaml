@@ -67,10 +67,10 @@
                 </MenuItem>
 
                 <MenuItem Width="80" Command="{Binding Navigacija}" CommandParameter="Get admins" 
-                          ToolTip="Get all admins">
+                          ToolTip="Get all users">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal" >
-                            <TextBlock Foreground="White" Text="Get admins" 
+                            <TextBlock Foreground="White" Text="Get users" 
                                        HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </StackPanel>
                     </MenuItem.Header>
