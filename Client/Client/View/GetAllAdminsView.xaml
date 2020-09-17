@@ -18,7 +18,7 @@
             <DataGrid Name="dataGridAdmins" ToolTip="Table with all admins." 
                       ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
                       ItemsSource="{Binding Admini}" SelectedItem="{Binding SelektovaniAdmin}"  
-                      AutoGenerateColumns="False" IsReadOnly="True" Margin="75,80,430,115" >
+                      AutoGenerateColumns="False" IsReadOnly="True" Margin="75,80,430,225" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID:" Width="*" Binding="{Binding ID}"/>
                     <DataGridTextColumn Header="Username:" Width="*" Binding="{Binding Username}"/>
@@ -32,7 +32,7 @@
             <DataGrid Name="dataGridVezbaci" ToolTip="Table with all vezbaci." 
                       ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
                       ItemsSource="{Binding Vezbaci}" SelectedItem="{Binding SelektovaniVezbac}" 
-                      AutoGenerateColumns="False" IsReadOnly="True" Margin="435,80,70,115" >
+                      AutoGenerateColumns="False" IsReadOnly="True" Margin="78,239,427,66" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id:" Width="*" Binding="{Binding ID}"/>
                     <DataGridTextColumn Header="Username:" Width="*" Binding="{Binding Username}"/>
@@ -40,12 +40,37 @@
                     <DataGridTextColumn Header="Role:" Width="*" Binding="{Binding Role}"/>
                 </DataGrid.Columns>
             </DataGrid>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" 
+                     Margin="596,105,0,0" TextWrapping="Wrap" Text="{Binding UsernameTB, Mode=TwoWay}" 
+                     VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="label" Content="Username" HorizontalAlignment="Left" Margin="596,79,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" 
+                     Margin="596,160,0,0" TextWrapping="Wrap" Text="{Binding FullnameTB, Mode=TwoWay}"
+                     VerticalAlignment="Top" Width="120"/>
+
+            <Label x:Name="label1" Content="Role" HorizontalAlignment="Left" Margin="596,188,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" 
+                     Margin="596,214,0,0" TextWrapping="Wrap" Text="{Binding RoleTB, Mode=TwoWay}"
+                     VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+            <Label x:Name="label_Copy" Content="Fullname" HorizontalAlignment="Left" Margin="596,134,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="label_Copy1" Content="{Binding IDTB, Mode=TwoWay}" HorizontalAlignment="Left" Margin="653,79,0,0" VerticalAlignment="Top" Height="26" Width="63"/>
+            <Button x:Name="button" Background="Green" Content="APPLY" 
+                    Command="{Binding ApplyChange}"
+                    HorizontalAlignment="Left" Margin="596,264,0,0" 
+                    VerticalAlignment="Top" Width="120" Height="25"/>
         </Grid>
         <Button Content="DELETE ADMIN" ToolTip="Deleting selected object from admin table." 
-                Height="30" Command="{Binding DeleteAdmin}" Margin="237,344,430,76"
-                 Visibility="{Binding Visible}"/>
+                Height="30" Command="{Binding DeleteAdmin}" Margin="379,139,308,281"
+                 Visibility="{Binding Visible}" Background="Red"/>
+        <Button Content="CHANGE ADMIN" ToolTip="Changing selected object from admin table." 
+            Height="30" Command="{Binding ChangeAdmin}" Margin="379,80,308,340"
+            Visibility="{Binding Visible}"/>
+
         <Button Content="DELETE VEZBAC" ToolTip="Deleting selected object from vezbac table." 
-                Height="30" Command="{Binding DeleteVezbac}" Margin="591,344,70,76"
-                Visibility="{Binding Visible}"/>
+                Height="30" Command="{Binding DeleteVezbac}" Margin="379,302,308,118"
+                Visibility="{Binding Visible}" Background="Red"/>
+        <Button Content="CHANGE VEZBAC" ToolTip="Changing selected object from vezbac table."
+            Height="30" Command="{Binding ChangeVezbac}" Margin="379,239,308,181"
+            Visibility="{Binding Visible}"/>
     </Grid>
 </UserControl>

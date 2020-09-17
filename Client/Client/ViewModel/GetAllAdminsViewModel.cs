@@ -19,6 +19,7 @@ namespace Client.ViewModel
             {
                 selektovaniAdmin = value;
                 DeleteAdmin.RaiseCanExecuteChanged();
+                ChangeAdmin.RaiseCanExecuteChanged();
             }
         }
 
@@ -31,6 +32,7 @@ namespace Client.ViewModel
             {
                 selektovaniVezbac = value;
                 DeleteVezbac.RaiseCanExecuteChanged();
+                ChangeVezbac.RaiseCanExecuteChanged();
             }
         }
 
@@ -39,6 +41,50 @@ namespace Client.ViewModel
 
         public MyICommand DeleteAdmin { get; set; }
         public MyICommand DeleteVezbac { get; set; }
+
+        public MyICommand ChangeAdmin { get; set; }
+        public MyICommand ChangeVezbac { get; set; }
+
+        public MyICommand ApplyChange { get; set; }
+
+        private string usernameTB;
+
+        public string UsernameTB
+        {
+            get { return usernameTB; }
+            set { usernameTB = value;
+                OnPropertyChanged("UsernameTB");
+            }
+        }
+        private string fullnameTB;
+
+        public string FullnameTB
+        {
+            get { return fullnameTB; }
+            set { 
+                fullnameTB = value;
+                OnPropertyChanged("FullnameTB");
+            }
+        }
+
+        private string roleTB;
+
+        public string RoleTB
+        {
+            get { return roleTB; }
+            set { roleTB = value;
+                OnPropertyChanged("RoleTB");
+            }
+        }
+        private string idTB;
+
+        public string IDTB
+        {
+            get { return idTB; }
+            set { idTB = value;
+                OnPropertyChanged("IDTB");
+            }
+        }
 
         public GetAllAdminsViewModel()
         {
@@ -63,8 +109,13 @@ namespace Client.ViewModel
             GetAdmins();
             GetVezbace();
 
-            DeleteAdmin = new MyICommand(DeleteA, CanDeleteA);
-            DeleteVezbac = new MyICommand(DeleteV, CanDeleteV);
+            DeleteAdmin = new MyICommand(DeleteA, CanUseA);
+            DeleteVezbac = new MyICommand(DeleteV, CanUseV);
+
+            ChangeAdmin = new MyICommand(ChangeA, CanUseA);
+            ChangeVezbac = new MyICommand(ChangeV, CanUseV);
+
+            ApplyChange = new MyICommand(Change);
         }
 
         private void GetAdmins()
@@ -92,7 +143,7 @@ namespace Client.ViewModel
             Admini.Remove(SelektovaniAdmin);
         }
 
-        public bool CanDeleteA() => SelektovaniAdmin != null;
+        public bool CanUseA() => SelektovaniAdmin != null;
 
         private void DeleteV()
         {
@@ -101,6 +152,46 @@ namespace Client.ViewModel
             Vezbaci.Remove(SelektovaniVezbac);
         }
 
-        public bool CanDeleteV() => SelektovaniVezbac != null;
+        public bool CanUseV() => SelektovaniVezbac != null;
+
+        public void ChangeA()
+        {
+            FullnameTB = SelektovaniAdmin.FullName;
+            UsernameTB = SelektovaniAdmin.Username;
+            RoleTB = "admin";
+            IDTB = SelektovaniAdmin.ID.ToString();
+        }
+
+        public void ChangeV()
+        {
+            FullnameTB = SelektovaniVezbac.FullName;
+            UsernameTB = SelektovaniVezbac.Username;
+            RoleTB = "vezbac";
+            IDTB = SelektovaniVezbac.ID.ToString();
+        }
+
+        public void Change()
+        {
+            if (RoleTB == "admin")
+            {
+                Admin admin = new Admin()
+                {
+                    ID = Int32.Parse(IDTB),
+                    FullName = FullnameTB,
+                    Username = UsernameTB,
+                    Role = 0
+                };
+            }
+            else if(RoleTB == "vezbac")
+            {
+                Vezbac vezbac = new Vezbac()
+                {
+                    ID = Int32.Parse(IDTB),
+                    FullName = FullnameTB,
+                    Username = UsernameTB,
+                    Role = 1
+                };
+            }
+        }
     }
 }
