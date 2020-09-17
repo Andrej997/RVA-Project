@@ -13,9 +13,12 @@
     </UserControl.DataContext>
     <Grid>
         <TextBlock x:Name="label4" Foreground="Red" TextWrapping="Wrap" Text="{Binding Error}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="250" Height="97"/>
-        
+
         <Grid Grid.Row="1" Visibility="{Binding Visible}">
-            <DataGrid Name="dataGridAdmins" ToolTip="Table with all admins." ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding Admini}" SelectedItem="{Binding SelektovanaPumpa}"  AutoGenerateColumns="False" IsReadOnly="True" Margin="75,107,85,208" >
+            <DataGrid Name="dataGridAdmins" ToolTip="Table with all admins." 
+                      ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
+                      ItemsSource="{Binding Admini}" SelectedItem="{Binding SelektovaniAdmin}"  
+                      AutoGenerateColumns="False" IsReadOnly="True" Margin="75,80,430,115" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID:" Width="*" Binding="{Binding ID}"/>
                     <DataGridTextColumn Header="Username:" Width="*" Binding="{Binding Username}"/>
@@ -26,7 +29,10 @@
         </Grid>
 
         <Grid Grid.Row="1" Visibility="{Binding Visible}">
-            <DataGrid Name="dataGridVezbaci" ToolTip="Table with all vezbaci." ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding Vezbaci}" SelectedItem="{Binding SelektovaniAdmin}" AutoGenerateColumns="False" IsReadOnly="True" Margin="75,279,85,36" >
+            <DataGrid Name="dataGridVezbaci" ToolTip="Table with all vezbaci." 
+                      ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
+                      ItemsSource="{Binding Vezbaci}" SelectedItem="{Binding SelektovaniVezbac}" 
+                      AutoGenerateColumns="False" IsReadOnly="True" Margin="435,80,70,115" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id:" Width="*" Binding="{Binding ID}"/>
                     <DataGridTextColumn Header="Username:" Width="*" Binding="{Binding Username}"/>
@@ -35,5 +41,11 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
+        <Button Content="DELETE ADMIN" ToolTip="Deleting selected object from admin table." 
+                Height="30" Command="{Binding DeleteAdmin}" Margin="237,344,430,76"
+                 Visibility="{Binding Visible}"/>
+        <Button Content="DELETE VEZBAC" ToolTip="Deleting selected object from vezbac table." 
+                Height="30" Command="{Binding DeleteVezbac}" Margin="591,344,70,76"
+                Visibility="{Binding Visible}"/>
     </Grid>
 </UserControl>

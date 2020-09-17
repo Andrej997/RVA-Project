@@ -76,7 +76,7 @@ public class Proxy : IDBService {
 	public string AddAdmin(Admin admin){
 
 		var message = realService.AddAdmin(admin);
-		LogAccess($"{DateTime.Now} {message}");
+		LogAccess($"{message}");
 		return message;
 	}
 
@@ -85,7 +85,7 @@ public class Proxy : IDBService {
 	public string AddVezbav(Vezbac vezbac){
 
 		var message = realService.AddVezbav(vezbac);
-		LogAccess($"{DateTime.Now} {message}");
+		LogAccess($"{message}");
 		return message;
 	}
 
@@ -101,6 +101,24 @@ public class Proxy : IDBService {
 		var list = realService.GetAllVezbace();
 		LogAccess($"Got {list.Count} vezbace from database");
 		return list;
+	}
+
+	/// 
+	/// <param name="admin"></param>
+	public string DeleteAdmin(Admin admin){
+
+		var message = realService.DeleteAdmin(admin);
+		LogAccess($"{message}");
+		return message;
+	}
+
+	/// 
+	/// <param name="vezbac"></param>
+	public string DeleteVezbac(Vezbac vezbac){
+
+		var message = realService.DeleteVezbac(vezbac);
+		LogAccess($"{message}");
+		return message;
 	}
 
 }//end Proxy

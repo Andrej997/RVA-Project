@@ -11,29 +11,34 @@ namespace Client.ViewModel
     public class GetAllAdminsViewModel : BindableBase
     {
         public static ObservableCollection<Admin> Admini { get; set; }
-        private Admin selektovaniAdmin = new Admin();
+        private Admin selektovaniAdmin;
         public Admin SelektovaniAdmin
         {
             get { return selektovaniAdmin; }
             set
             {
                 selektovaniAdmin = value;
+                DeleteAdmin.RaiseCanExecuteChanged();
             }
         }
 
         public static ObservableCollection<Vezbac> Vezbaci { get; set; }
-        private Vezbac selektovaniVezbac = new Vezbac();
+        private Vezbac selektovaniVezbac;
         public Vezbac SelektovaniVezbac
         {
             get { return selektovaniVezbac; }
             set
             {
                 selektovaniVezbac = value;
+                DeleteVezbac.RaiseCanExecuteChanged();
             }
         }
 
         public Visibility Visible { get; set; }
         public string Error { get; set; }
+
+        public MyICommand DeleteAdmin { get; set; }
+        public MyICommand DeleteVezbac { get; set; }
 
         public GetAllAdminsViewModel()
         {
@@ -57,6 +62,9 @@ namespace Client.ViewModel
             }
             GetAdmins();
             GetVezbace();
+
+            DeleteAdmin = new MyICommand(DeleteA, CanDeleteA);
+            DeleteVezbac = new MyICommand(DeleteV, CanDeleteV);
         }
 
         private void GetAdmins()
@@ -76,5 +84,23 @@ namespace Client.ViewModel
                 Vezbaci.Add(vezbac);
             }
         }
+
+        private void DeleteA()
+        {
+            Error = InternalData.Data.service.DeleteAdmin(SelektovaniAdmin);
+            MessageBox.Show(Error);
+            Admini.Remove(SelektovaniAdmin);
+        }
+
+        public bool CanDeleteA() => SelektovaniAdmin != null;
+
+        private void DeleteV()
+        {
+            Error = InternalData.Data.service.DeleteVezbac(SelektovaniVezbac);
+            MessageBox.Show(Error);
+            Vezbaci.Remove(SelektovaniVezbac);
+        }
+
+        public bool CanDeleteV() => SelektovaniVezbac != null;
     }
 }

@@ -30,5 +30,11 @@ namespace Common
 
         [OperationContract]
         List<Vezbac> GetAllVezbace();
+
+        [OperationContract]
+        string DeleteAdmin(Admin admin);
+
+        [OperationContract]
+        string DeleteVezbac(Vezbac vezbac);
     }
 }

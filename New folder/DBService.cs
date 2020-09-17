@@ -122,4 +122,42 @@ public class DBService : IDBService {
 		return list;
 	}
 
+	/// 
+	/// <param name="admin"></param>
+	public string DeleteAdmin(Admin admin){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				commonContex.Admin.Remove(admin);
+				commonContex.SaveChanges();
+			}
+			catch
+			{
+				return $"Failed to deleted admin [{admin.Username}] {admin.FullName}";
+			}
+		}
+		return $"Successfully deleted admin [{admin.Username}] {admin.FullName}";
+	}
+
+	/// 
+	/// <param name="vezbac"></param>
+	public string DeleteVezbac(Vezbac vezbac){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				commonContex.Vezbac.Remove(vezbac);
+				commonContex.SaveChanges();
+			}
+			catch
+			{
+				return $"Failed to deleted vezbac [{vezbac.Username}] {vezbac.FullName}";
+			}
+		}
+		return $"Successfully deleted vezbac [{vezbac.Username}] {vezbac.FullName}";
+	}
+
 }//end DBService

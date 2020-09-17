@@ -53,4 +53,20 @@ public class CRUDUser {
 		return service.GetAllVezbace();
 	}
 
+	/// 
+	/// <param name="admin"></param>
+	/// <param name="service"></param>
+	public string DeleteAdmin(Admin admin, IDBService service){
+
+		return service.DeleteAdmin(admin);
+	}
+
+	/// 
+	/// <param name="vezbac"></param>
+	/// <param name="service"></param>
+	public string DeleteVezbac(Vezbac vezbac, IDBService service){
+
+		return service.DeleteVezbac(vezbac);
+	}
+
 }//end CRUDUser

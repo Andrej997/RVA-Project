@@ -32,6 +32,16 @@ namespace Common
             return CRUDUser.CreateVezbac(vezbac, proxy);
         }
 
+        public string DeleteAdmin(Admin admin)
+        {
+            return CRUDUser.DeleteAdmin(admin, proxy);
+        }
+
+        public string DeleteVezbac(Vezbac vezbac)
+        {
+            return CRUDUser.DeleteVezbac(vezbac, proxy);
+        }
+
         public List<Admin> GetAllAdmins()
         {
             return CRUDUser.GetAllAdmins(proxy);

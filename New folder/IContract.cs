@@ -13,7 +13,7 @@ using System.IO;
 
 
 
-public interface IContract   {
+public interface IContract    {
 
 	/// 
 	/// <param name="admin"></param>
@@ -42,4 +42,12 @@ public interface IContract   {
 	/// 
 	/// <param name="username"></param>
 	void LogOut(string username);
+
+	/// 
+	/// <param name="admin"></param>
+	string DeleteAdmin(Admin admin);
+
+	/// 
+	/// <param name="vezbac"></param>
+	string DeleteVezbac(Vezbac vezbac);
 }//end IContract
