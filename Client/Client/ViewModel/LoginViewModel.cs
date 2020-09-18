@@ -8,10 +8,34 @@ namespace Client.ViewModel
 
         public MyICommand Login { get; set; }
         public MyICommand Logout { get; set; }
+        public MyICommand ChangeMe { get; set; }
 
         public string Error { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+
+        private string usernameL;
+
+        public string UsernameL
+        {
+            get { return usernameL; }
+            set { 
+                usernameL = value;
+                OnPropertyChanged("UsernameL");
+            }
+        }
+
+        private string fullnameL;
+
+        public string FullnameL
+        {
+            get { return fullnameL; }
+            set { 
+                fullnameL = value;
+                OnPropertyChanged("FullnameL");
+            }
+        }
+
 
         public bool HideAll { get; set; }
         public bool Disable { get; set; }
@@ -20,20 +44,25 @@ namespace Client.ViewModel
 
         public Visibility btnLogOutVisibility { get; set; }
 
+        public Visibility btnLogggedVisibility { get; set; }
+
         public LoginViewModel()
         {
             if (!InternalData.Data.IsLoggedIn())
             {
+                SetModel();
                 btnLogInVisibility = Visibility.Collapsed;
-                btnLogOutVisibility = Visibility.Visible;
+                btnLogggedVisibility = Visibility.Visible;
             }
             else 
             {
                 btnLogInVisibility = Visibility.Visible;
-                btnLogOutVisibility = Visibility.Collapsed;
+                btnLogggedVisibility = Visibility.Collapsed;
             }
+            
             Login = new MyICommand(SendLoginData);
             Logout = new MyICommand(SendLogoutData);
+            ChangeMe = new MyICommand(SendChange);
         }
 
         //public void TriggerMainViewModelProp(bool IsItemEnable)
@@ -43,6 +72,17 @@ namespace Client.ViewModel
         //    action(null);
         //}
 
+        public void SendChange()
+        {
+            InternalData.Data.ulogovanaOsova.Username = UsernameL;
+            InternalData.Data.ulogovanaOsova.FullName = FullnameL;
+            if (InternalData.Data.ulogovanaOsova.Role == 0)
+                InternalData.Data.service.ChangeAdmin(InternalData.Data.ulogovanaOsova as Admin);
+            else
+                InternalData.Data.service.ChangeVezbac(InternalData.Data.ulogovanaOsova as Vezbac);
+
+        }
+
         public void SendLoginData()
         {
             LoginUser loginUser = new LoginUser(Username, Password);
@@ -50,6 +90,7 @@ namespace Client.ViewModel
             if (admin != null)
             {
                 InternalData.Data.ulogovanaOsova = admin;
+                SetModel();
                 Error = "";
             }
             else
@@ -58,10 +99,20 @@ namespace Client.ViewModel
                 if (vezbac != null)
                 {
                     InternalData.Data.ulogovanaOsova = vezbac;
+                    SetModel();
                     Error = "";
                 }
                 else
                     Error = errorMessage;
+            }
+        }
+
+        private void SetModel()
+        {
+            if (!InternalData.Data.IsLoggedIn())
+            {
+                UsernameL = InternalData.Data.ulogovanaOsova.Username;
+                FullnameL = InternalData.Data.ulogovanaOsova.FullName;
             }
         }
 

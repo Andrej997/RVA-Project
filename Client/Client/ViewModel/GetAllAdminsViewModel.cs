@@ -106,8 +106,16 @@ namespace Client.ViewModel
                     Error = "";
                 }
             }
-            GetAdmins();
-            GetVezbace();
+            try
+            {
+                GetAdmins();
+                GetVezbace();
+            }
+            catch
+            {
+
+            }
+            
 
             DeleteAdmin = new MyICommand(DeleteA, CanUseA);
             DeleteVezbac = new MyICommand(DeleteV, CanUseV);

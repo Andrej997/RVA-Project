@@ -79,7 +79,7 @@
                 <MenuItem Width="80" Command="{Binding Navigacija}" CommandParameter="Login" ToolTip="Login page" >
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal" >
-                            <TextBlock Foreground="White" Text="Login" 
+                            <TextBlock Foreground="White" Text="Profile" 
                                        HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </StackPanel>
                     </MenuItem.Header>
