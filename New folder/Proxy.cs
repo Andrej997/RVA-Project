@@ -65,8 +65,7 @@ public class Proxy : IDBService {
 
 	/// 
 	/// <param name="osoba"></param>
-	public void LogOut(string username)
-	{
+	public void LogOut(string username) {
 
 		LogAccess($"{username} logged out!");
 	}
@@ -117,6 +116,24 @@ public class Proxy : IDBService {
 	public string DeleteVezbac(Vezbac vezbac){
 
 		var message = realService.DeleteVezbac(vezbac);
+		LogAccess($"{message}");
+		return message;
+	}
+
+	/// 
+	/// <param name="admin"></param>
+	public string ChangeAdmin(Admin admin){
+
+		var message = realService.ChangeAdmin(admin);
+		LogAccess($"{message}");
+		return message;
+	}
+
+	/// 
+	/// <param name="vezbac"></param>
+	public string ChangeVezbac(Vezbac vezbac){
+
+		var message = realService.ChangeVezbac(vezbac);
 		LogAccess($"{message}");
 		return message;
 	}

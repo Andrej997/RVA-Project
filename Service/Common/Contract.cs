@@ -22,6 +22,16 @@ namespace Common
             CRUDUser = new CRUDUser();
         }
 
+        public string ChangeAdmin(Admin admin)
+        {
+            return CRUDUser.ChangeAdmin(admin, proxy);
+        }
+
+        public string ChangeVezbac(Vezbac vezbac)
+        {
+            return CRUDUser.ChangeVezbac(vezbac, proxy);
+        }
+
         public string CreateAdmin(Admin admin)
         {
             return CRUDUser.CreateAdmin(admin, proxy);

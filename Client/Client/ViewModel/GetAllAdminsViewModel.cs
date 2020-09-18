@@ -181,6 +181,7 @@ namespace Client.ViewModel
                     Username = UsernameTB,
                     Role = 0
                 };
+                Error = InternalData.Data.service.ChangeAdmin(admin);
             }
             else if(RoleTB == "vezbac")
             {
@@ -191,6 +192,7 @@ namespace Client.ViewModel
                     Username = UsernameTB,
                     Role = 1
                 };
+                Error = InternalData.Data.service.ChangeVezbac(vezbac);
             }
         }
     }

@@ -12,6 +12,7 @@ using System.Text;
 using System.IO;
 using Common;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 public class DBService : IDBService {
 
@@ -158,6 +159,56 @@ public class DBService : IDBService {
 			}
 		}
 		return $"Successfully deleted vezbac [{vezbac.Username}] {vezbac.FullName}";
+	}
+
+	/// 
+	/// <param name="admin"></param>
+	public string ChangeAdmin(Admin admin){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				var adm = commonContex.Admin
+					.FirstOrDefault(x => x.ID == admin.ID);
+				adm.Username = admin.Username;
+				adm.FullName = admin.FullName;
+
+				commonContex.Entry(adm)
+					.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+				commonContex.SaveChanges();
+			}
+			catch
+			{
+				return $"Failed to update admin [{admin.Username}] {admin.FullName}";
+			}
+		}
+		return $"Successfully update admin [{admin.Username}] {admin.FullName}";
+	}
+
+	/// 
+	/// <param name="vezbac"></param>
+	public string ChangeVezbac(Vezbac vezbac){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				var vez = commonContex.Vezbac
+					.FirstOrDefault(x => x.ID == vezbac.ID);
+				vez.Username = vezbac.Username;
+				vez.FullName = vezbac.FullName;
+
+				commonContex.Entry(vez)
+					.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+				commonContex.SaveChanges();
+			}
+			catch
+			{
+				return $"Failed to update vezbac [{vezbac.Username}] {vezbac.FullName}";
+			}
+		}
+		return $"Successfully update vezbac [{vezbac.Username}] {vezbac.FullName}";
 	}
 
 }//end DBService
