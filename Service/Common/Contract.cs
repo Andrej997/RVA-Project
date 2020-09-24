@@ -13,6 +13,7 @@ namespace Common
         private Proxy proxy;
         private LogInOut LogInOut;
         private CRUDUser CRUDUser;
+        private CRUDTrening CRUDTrening;
 
         public Contract()
         {
@@ -20,6 +21,12 @@ namespace Common
             proxy = new Proxy(service);
             LogInOut = new LogInOut();
             CRUDUser = new CRUDUser();
+            CRUDTrening = new CRUDTrening();
+        }
+
+        public string AddTreningAdmin(int adminId, Trening trening)
+        {
+            return CRUDTrening.AddTreningAdmin(adminId, proxy, trening);
         }
 
         public string ChangeAdmin(Admin admin)
@@ -60,6 +67,11 @@ namespace Common
         public List<Vezbac> GetAllVezbace()
         {
             return CRUDUser.GetAllVezbace(proxy);
+        }
+
+        public List<Trener> GetTrenere()
+        {
+            return CRUDTrening.GetTrenere(proxy);
         }
 
         public Admin LogInAdmin(LoginUser user)

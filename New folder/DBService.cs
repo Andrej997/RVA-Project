@@ -13,6 +13,7 @@ using System.IO;
 using Common;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.EntityFrameworkCore;
 
 public class DBService : IDBService {
 
@@ -209,6 +210,66 @@ public class DBService : IDBService {
 			}
 		}
 		return $"Successfully update vezbac [{vezbac.Username}] {vezbac.FullName}";
+	}
+
+	/// 
+	/// <param name="vezbac"></param>
+	public string AddTreningVezbac(Vezbac vezbac){
+
+		return "";
+	}
+
+	/// 
+	/// <param name="trening"></param>
+	public string DeleteTrenin(Trening trening){
+
+		return "";
+	}
+
+	/// 
+	/// <param name="adminId"></param>
+	/// <param name="trening"></param>
+	public string AddTreningAdmin(int adminId, Trening trening){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				Admin admin = null;
+				
+				admin = commonContex.Admin
+					.Where(x => x.ID == adminId)
+					.Include(x => x.treninzi)
+					.FirstOrDefault();
+				
+				if (admin == null)
+					return $"No admin with id: {adminId}";
+
+				if (admin.treninzi == null)
+					admin.treninzi = new List<Trening>();
+				admin.treninzi.Add(trening);
+
+				commonContex.Entry(admin)
+					.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+				commonContex.SaveChanges();
+			}
+			catch
+			{
+				return $"Failed to add trening to admin ({adminId})";
+			}
+		}
+		return $"Successfully added trening to admin ({adminId})";
+	}
+
+	public List<Trener> GetTrenere(){
+
+		List<Trener> list;
+		using (CommonContex commonContex = new CommonContex())
+		{
+			list = commonContex.Trener
+				.ToList();
+		}
+		return list;
 	}
 
 }//end DBService

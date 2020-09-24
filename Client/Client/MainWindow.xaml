@@ -18,6 +18,10 @@
             <view:HomeView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type viewModel:TreningViewModel}">
+            <view:TreningView/>
+        </DataTemplate>
+
         <DataTemplate DataType="{x:Type viewModel:CRUDUserViewModel}">
             <view:CRUDUserView/>
         </DataTemplate>
@@ -51,6 +55,16 @@
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal" >
                             <TextBlock Foreground="White" Text="Home" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+
+                <MenuItem Width="80" Command="{Binding Navigacija}" CommandParameter="Trening" 
+                          ToolTip="Trening">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Foreground="White" Text="Trening" 
                                        HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </StackPanel>
                     </MenuItem.Header>

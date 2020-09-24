@@ -27,8 +27,12 @@ public class Proxy : IDBService {
 
 	public void LogAccess(string message)
 	{
-		Console.WriteLine($"[{DateTime.Now}] -- {message}");
-		// TO DO: loguj u fajl
+		var text = $"[{DateTime.Now}] -- {message}";
+		Console.WriteLine(text);
+		using (StreamWriter w = File.AppendText("log.txt"))
+		{
+			w.WriteLine(text);
+		}
 	}
 
 	/// 
@@ -136,6 +140,37 @@ public class Proxy : IDBService {
 		var message = realService.ChangeVezbac(vezbac);
 		LogAccess($"{message}");
 		return message;
+	}
+
+	/// 
+	/// <param name="vezbac"></param>
+	public string AddTreningVezbac(Vezbac vezbac){
+
+		return "";
+	}
+
+	/// 
+	/// <param name="trening"></param>
+	public string DeleteTrenin(Trening trening){
+
+		return "";
+	}
+
+	/// 
+	/// <param name="adminId"></param>
+	/// <param name="trening"></param>
+	public string AddTreningAdmin(int adminId, Trening trening){
+
+		var message = realService.AddTreningAdmin(adminId, trening);
+		LogAccess($"{message}");
+		return message;
+	}
+
+	public List<Trener> GetTrenere(){
+
+		var list = realService.GetTrenere();
+		LogAccess($"Got {list.Count} trenera from database");
+		return list;
 	}
 
 }//end Proxy

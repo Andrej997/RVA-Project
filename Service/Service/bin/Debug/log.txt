@@ -1,0 +1,22 @@
+[9/22/2020 9:22:36 PM] -- Got 2 admins from database
+[9/22/2020 9:22:37 PM] -- Got 1 vezbace from database
+[9/22/2020 9:22:43 PM] -- Admin [admin] logged in!
+[9/22/2020 9:22:44 PM] -- Got 2 admins from database
+[9/22/2020 9:22:44 PM] -- Got 1 vezbace from database
+[9/22/2020 9:22:48 PM] -- Got 2 admins from database
+[9/22/2020 9:22:48 PM] -- Got 1 vezbace from database
+[9/22/2020 9:23:21 PM] -- Got 2 admins from database
+[9/22/2020 9:23:21 PM] -- Got 1 vezbace from database
+[9/24/2020 10:27:32 PM] -- Got 2 admins from database
+[9/24/2020 10:27:32 PM] -- Got 1 vezbace from database
+[9/24/2020 10:28:06 PM] -- Got 2 admins from database
+[9/24/2020 10:28:06 PM] -- Got 1 vezbace from database
+[9/24/2020 10:28:15 PM] -- Got 2 admins from database
+[9/24/2020 10:28:15 PM] -- Got 1 vezbace from database
+[9/24/2020 10:28:16 PM] -- Got 2 admins from database
+[9/24/2020 10:28:16 PM] -- Got 1 vezbace from database
+[9/24/2020 10:31:03 PM] -- Got 2 admins from database
+[9/24/2020 10:31:03 PM] -- Got 1 vezbace from database
+[9/24/2020 10:32:29 PM] -- Got 2 admins from database
+[9/24/2020 10:32:29 PM] -- Got 1 vezbace from database
+[9/24/2020 10:32:35 PM] -- Got 3 trenera from database

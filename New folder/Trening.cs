@@ -25,7 +25,6 @@ public class Trening {
 
 	}
 
-	[Key]
 	public int ID{
 		get;
 		set;

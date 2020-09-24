@@ -14,7 +14,7 @@ using System.ComponentModel.DataAnnotations;
 
 public class Trener : Osoba {
 
-	public List<Trening> trening;
+	public List<Trening> trening { get; set; }
 
 	public Trener(){
 
@@ -29,7 +29,6 @@ public class Trener : Osoba {
 		set;
 	}
 
-	[Key]
 	public override int ID{
 		get;
 		set;

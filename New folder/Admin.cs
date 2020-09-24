@@ -13,6 +13,8 @@ using System.IO;
 using System.ComponentModel.DataAnnotations;
 
 public class Admin : Osoba {
+	public List<Trening> treninzi { get; set; }
+
 
 	public Admin(){
 
@@ -27,7 +29,6 @@ public class Admin : Osoba {
 		set;
 	}
 
-	[Key]
 	public override int ID{
 		get;
 		set;

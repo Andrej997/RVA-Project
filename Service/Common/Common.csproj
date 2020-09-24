@@ -162,14 +162,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\New folder\AddTrening.cs">
+      <Link>Service\AddTrening.cs</Link>
+    </Compile>
     <Compile Include="..\..\New folder\Admin.cs">
       <Link>Model\Admin.cs</Link>
+    </Compile>
+    <Compile Include="..\..\New folder\CRUDTrening.cs">
+      <Link>Service\CRUDTrening.cs</Link>
     </Compile>
     <Compile Include="..\..\New folder\CRUDUser.cs">
       <Link>Service\CRUDUser.cs</Link>
     </Compile>
     <Compile Include="..\..\New folder\DBService.cs">
       <Link>Service\DBService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\New folder\DeleteTrening.cs">
+      <Link>Service\DeleteTrening.cs</Link>
+    </Compile>
+    <Compile Include="..\..\New folder\ICommandUR.cs">
+      <Link>Service\ICommandUR.cs</Link>
     </Compile>
     <Compile Include="..\..\New folder\IDBService.cs">
       <Link>Service\IDBService.cs</Link>
@@ -195,6 +207,9 @@
     <Compile Include="..\..\New folder\Trening.cs">
       <Link>Model\Trening.cs</Link>
     </Compile>
+    <Compile Include="..\..\New folder\UndoRedo.cs">
+      <Link>Service\UndoRedo.cs</Link>
+    </Compile>
     <Compile Include="..\..\New folder\Vežbac.cs">
       <Link>Model\Vežbac.cs</Link>
     </Compile>
@@ -204,6 +219,14 @@
     <Compile Include="Migrations\20200912162631_Initial.cs" />
     <Compile Include="Migrations\20200912162631_Initial.designer.cs">
       <DependentUpon>20200912162631_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200922195638_Update.cs" />
+    <Compile Include="Migrations\20200922195638_Update.designer.cs">
+      <DependentUpon>20200922195638_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200924170416_Update1.cs" />
+    <Compile Include="Migrations\20200924170416_Update1.designer.cs">
+      <DependentUpon>20200924170416_Update1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\CommonContexModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

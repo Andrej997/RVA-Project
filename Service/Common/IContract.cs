@@ -42,5 +42,11 @@ namespace Common
 
         [OperationContract]
         string ChangeVezbac(Vezbac vezbac);
+
+        [OperationContract]
+        string AddTreningAdmin(int adminId, Trening trening);
+
+        [OperationContract]
+        List<Trener> GetTrenere();
     }
 }

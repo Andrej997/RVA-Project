@@ -4,14 +4,16 @@ using Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Common.Migrations
 {
     [DbContext(typeof(CommonContex))]
-    partial class CommonContexModelSnapshot : ModelSnapshot
+    [Migration("20200922195638_Update")]
+    partial class Update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,25 +76,10 @@ namespace Common.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AdminID")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("Termin")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("TrenerID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("VezbacID")
-                        .HasColumnType("int");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("AdminID");
-
-                    b.HasIndex("TrenerID");
-
-                    b.HasIndex("VezbacID");
 
                     b.ToTable("Trening");
                 });
@@ -119,21 +106,6 @@ namespace Common.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Vezbac");
-                });
-
-            modelBuilder.Entity("Trening", b =>
-                {
-                    b.HasOne("Admin", null)
-                        .WithMany("treninzi")
-                        .HasForeignKey("AdminID");
-
-                    b.HasOne("Trener", null)
-                        .WithMany("trening")
-                        .HasForeignKey("TrenerID");
-
-                    b.HasOne("Vezbac", null)
-                        .WithMany("treninzi")
-                        .HasForeignKey("VezbacID");
                 });
 #pragma warning restore 612, 618
         }

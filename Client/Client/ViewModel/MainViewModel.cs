@@ -14,6 +14,7 @@ namespace Client.ViewModel
         private CRUDUserViewModel cRUDUser;
         private GetAllAdminsViewModel GetAllAdminsViewModel;
         private LoginViewModel loginViewModel;
+        private TreningViewModel treningViewModel;
 
         private BindableBase trenutniViewModel;
         public BindableBase TrenutniViewModel
@@ -45,6 +46,7 @@ namespace Client.ViewModel
             cRUDUser = new CRUDUserViewModel();
             loginViewModel = new LoginViewModel();
             GetAllAdminsViewModel = new GetAllAdminsViewModel();
+            treningViewModel = new TreningViewModel();
         }
 
         public void Navig(string odabir)
@@ -53,6 +55,9 @@ namespace Client.ViewModel
             {
                 case "Home":
                     TrenutniViewModel = homeViewModel;
+                    break;
+                case "Trening":
+                    TrenutniViewModel = treningViewModel;
                     break;
                 case "Create user":
                     TrenutniViewModel = cRUDUser;
