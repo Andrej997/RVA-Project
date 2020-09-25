@@ -15,7 +15,7 @@ using System.ComponentModel.DataAnnotations;
 public class Trening {
 
 	private DateTime termin;
-	public Trener trener;
+	private Trener trener;
 
 	public Trening(){
 
@@ -36,6 +36,18 @@ public class Trening {
 		}
 		set{
 			termin = value;
+		}
+	}
+
+	public Trener Trener
+	{
+		get
+		{
+			return trener;
+		}
+		set
+		{
+			trener = value;
 		}
 	}
 

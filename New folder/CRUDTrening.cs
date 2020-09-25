@@ -31,7 +31,7 @@ public class CRUDTrening {
 	/// <param name="trening"></param>
 	public string AddTreningAdmin(int adminId, IDBService service, Trening trening){
 
-		undoRedo.InsertInUnDoRedoForAdd(trening);
+		//undoRedo.InsertInUnDoRedoForAdd(trening);
 		return service.AddTreningAdmin(adminId, trening);
 	}
 

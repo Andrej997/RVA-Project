@@ -16,10 +16,10 @@
             <DataGrid Name="dataGridAdmins" ToolTip="Table with all admins." 
                       ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
                       ItemsSource="{Binding Treninzi}" SelectedItem="{Binding SelektovaniTrening}"  
-                      AutoGenerateColumns="False" IsReadOnly="True" Margin="32,59,588,221" >
+                      AutoGenerateColumns="False" IsReadOnly="True" Margin="32,59,395,221" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Vreme:" Width="*" Binding="{Binding Termin}"/>
-                    <DataGridTextColumn Header="Trener:" Width="*" Binding="{Binding Trener.Fullname}"/>
+                    <DataGridTextColumn Header="Trener:" Width="*" Binding="{Binding Trener.FullName}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Button x:Name="button" Content="Create Trening" HorizontalAlignment="Left" 
@@ -37,11 +37,15 @@
             <Button x:Name="button3" Content="DeleteTrening" HorizontalAlignment="Left" 
                     Margin="87,284,0,0" VerticalAlignment="Top" Width="75"
                     Command="{Binding DeleteTrening}"/>
-            
-            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="562,202,0,0" 
-                      VerticalAlignment="Top" Width="120"/>
-            
-            <Label x:Name="label" Content="Treneri" HorizontalAlignment="Left" Margin="562,171,0,0" VerticalAlignment="Top"/>
+
+            <DataGrid Name="dataGridAdmin1s" ToolTip="Table with all admins." 
+                      ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
+                      ItemsSource="{Binding Treneri}" SelectedItem="{Binding SelektovaniTrener}"  
+                      AutoGenerateColumns="False" IsReadOnly="True" Margin="472,186,118,94" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Trener:" Width="*" Binding="{Binding FullName}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
     </Grid>
 </UserControl>
