@@ -29,6 +29,11 @@ namespace Common
             return CRUDTrening.AddTreningAdmin(adminId, proxy, trening);
         }
 
+        public string AddTreningVezbac(int vezbacId, Trening trening)
+        {
+            return CRUDTrening.AddTreningVezbac(vezbacId, proxy, trening);
+        }
+
         public string ChangeAdmin(Admin admin)
         {
             return CRUDUser.ChangeAdmin(admin, proxy);
@@ -54,6 +59,16 @@ namespace Common
             return CRUDUser.DeleteAdmin(admin, proxy);
         }
 
+        public string DeleteTrening(Admin admin, Trening trening)
+        {
+            return CRUDTrening.DeleteTrening(admin, trening, proxy);
+        }
+
+        public string DeleteTreningV(Vezbac vezbac, Trening trening)
+        {
+            return CRUDTrening.DeleteTrening(vezbac, trening, proxy);
+        }
+
         public string DeleteVezbac(Vezbac vezbac)
         {
             return CRUDUser.DeleteVezbac(vezbac, proxy);
@@ -72,6 +87,16 @@ namespace Common
         public List<Trener> GetTrenere()
         {
             return CRUDTrening.GetTrenere(proxy);
+        }
+
+        public List<Trening> GetTreninge(Admin admin)
+        {
+            return CRUDTrening.GetTreninge(admin, proxy);
+        }
+
+        public List<Trening> GetTreningeV(Vezbac vezbac)
+        {
+            return CRUDTrening.GetTreninge(vezbac, proxy);
         }
 
         public Admin LogInAdmin(LoginUser user)

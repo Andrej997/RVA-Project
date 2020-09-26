@@ -13,7 +13,7 @@ using System.IO;
 
 
 
-public interface IContract      {
+public interface IContract         {
 
 	/// 
 	/// <param name="admin"></param>
@@ -64,4 +64,27 @@ public interface IContract      {
 	/// 
 	/// <param name="osoba"></param>
 	LIst<Trening> GetTreninge(Osoba osoba);
+
+	/// 
+	/// <param name="adminId"></param>
+	/// <param name="trening"></param>
+	string AddTreningAdmin(int adminId, Trening trening);
+
+	/// 
+	/// <param name="vezbacId"></param>
+	/// <param name="trening"></param>
+	string AddTreningVezbac(int vezbacId, Trening trening);
+
+	/// 
+	/// <param name="osoba"></param>
+	/// <param name="trening"></param>
+	string DeleteTrening(Osoba osoba, Trening trening);
+
+	/// 
+	/// <param name="admin"></param>
+	LIst<Trening> GetTreninge(Admin admin);
+
+	/// 
+	/// <param name="vezbac"></param>
+	List<Trening> GetTreninge(Vezbac vezbac);
 }//end IContract

@@ -213,20 +213,6 @@ public class DBService : IDBService {
 	}
 
 	/// 
-	/// <param name="vezbac"></param>
-	public string AddTreningVezbac(Vezbac vezbac){
-
-		return "";
-	}
-
-	/// 
-	/// <param name="trening"></param>
-	public string DeleteTrenin(Trening trening){
-
-		return "";
-	}
-
-	/// 
 	/// <param name="adminId"></param>
 	/// <param name="trening"></param>
 	public string AddTreningAdmin(int adminId, Trening trening){
@@ -270,6 +256,158 @@ public class DBService : IDBService {
 				.ToList();
 		}
 		return list;
+	}
+
+	/// 
+	/// <param name="osoba"></param>
+	/// <param name="trening"></param>
+	public string DeleteTrening(Osoba osoba, Trening trening){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				if (osoba.Role == 0)
+				{
+					Admin admin = null;
+
+					admin = commonContex.Admin
+						.Where(x => x.ID == osoba.ID)
+						.Include(x => x.treninzi)
+						.FirstOrDefault();
+
+					if (admin == null)
+						return $"No admin with id: {osoba.ID}";
+
+					if (admin.treninzi == null)
+						return $"Admin with id: {osoba.ID} doesn't have treninge";
+
+					admin.treninzi.Remove(trening);
+
+					commonContex.Entry(admin)
+						.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+					commonContex.SaveChanges();
+				}
+				else
+				{
+					Vezbac  vezbac = null;
+
+					vezbac = commonContex.Vezbac
+						.Where(x => x.ID == osoba.ID)
+						.Include(x => x.treninzi)
+						.FirstOrDefault();
+
+					if (vezbac == null)
+						return $"No vezbac with id: {osoba.ID}";
+
+					if (vezbac.treninzi == null)
+						return $"Vezbac with id: {osoba.ID} doesn't have treninge";
+
+					vezbac.treninzi.Remove(trening);
+
+					commonContex.Entry(vezbac)
+						.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+					commonContex.SaveChanges();
+				}
+			}
+			catch
+			{
+				if (osoba.Role == 0)
+					return $"Failed to remove trening to admin ({osoba.ID})";
+				else
+					return $"Failed to remove trening to vezbac ({osoba.ID})";
+			}
+		}
+		if (osoba.Role == 0)
+			return $"Successfully removed trening to admin ({osoba.ID})";
+		else
+			return $"Successfully removed trening to vezbac ({osoba.ID})";
+	}
+
+	/// 
+	/// <param name="osoba"></param>
+	public List<Trening> GetTreninge(Osoba osoba){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				if (osoba.Role == 0)
+				{
+					Admin admin = null;
+
+					admin = commonContex.Admin
+						.Where(x => x.ID == osoba.ID)
+							.Include(x => x.treninzi)
+								.ThenInclude(x => x.Trener)
+						.FirstOrDefault();
+
+					if (admin == null)
+						return null;
+
+					if (admin.treninzi == null)
+						return null;
+
+					return admin.treninzi;
+				}
+				else
+				{
+					Vezbac vezbac = null;
+
+					vezbac = commonContex.Vezbac
+						.Where(x => x.ID == osoba.ID)
+						.Include(x => x.treninzi)
+						.FirstOrDefault();
+
+					if (vezbac == null)
+						return null;
+
+					if (vezbac.treninzi == null)
+						return null;
+
+					return vezbac.treninzi;
+				}
+			}
+			catch
+			{
+				return null;
+			}
+		}
+	}
+
+	/// 
+	/// <param name="vezbacId"></param>
+	/// <param name="trening"></param>
+	public string AddTreningVezbac(int vezbacId, Trening trening){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				Vezbac vezbac = null;
+
+				vezbac = commonContex.Vezbac
+					.Where(x => x.ID == vezbacId)
+					.Include(x => x.treninzi)
+					.FirstOrDefault();
+
+				if (vezbac == null)
+					return $"No vezbac with id: {vezbacId}";
+
+				if (vezbac.treninzi == null)
+					vezbac.treninzi = new List<Trening>();
+				vezbac.treninzi.Add(trening);
+
+				commonContex.Entry(vezbac)
+					.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+				commonContex.SaveChanges();
+			}
+			catch
+			{
+				return $"Failed to add trening to vezbac ({vezbacId})";
+			}
+		}
+		return $"Successfully added trening to vezbac ({vezbacId})";
 	}
 
 }//end DBService

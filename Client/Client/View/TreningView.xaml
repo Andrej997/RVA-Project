@@ -12,7 +12,10 @@
         <viewModel:TreningViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <Grid Grid.Row="1">
+        <TextBlock x:Name="label4" Foreground="Red" TextWrapping="Wrap" Text="{Binding Error}" 
+                   HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
+                   Width="250" Height="97"/>
+        <Grid Grid.Row="1" Visibility="{Binding Visible}">
             <DataGrid Name="dataGridAdmins" ToolTip="Table with all admins." 
                       ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
                       ItemsSource="{Binding Treninzi}" SelectedItem="{Binding SelektovaniTrening}"  
@@ -46,6 +49,7 @@
                     <DataGridTextColumn Header="Trener:" Width="*" Binding="{Binding FullName}"/>
                 </DataGrid.Columns>
             </DataGrid>
+            
         </Grid>
     </Grid>
 </UserControl>

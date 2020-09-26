@@ -18,7 +18,7 @@ public class CRUDTrening {
 	public UndoRedo undoRedo;
 
 	public CRUDTrening(){
-
+		undoRedo = new UndoRedo();
 	}
 
 	~CRUDTrening(){
@@ -31,7 +31,7 @@ public class CRUDTrening {
 	/// <param name="trening"></param>
 	public string AddTreningAdmin(int adminId, IDBService service, Trening trening){
 
-		//undoRedo.InsertInUnDoRedoForAdd(trening);
+		undoRedo.InsertInUnDoRedoForAdd(trening);
 		return service.AddTreningAdmin(adminId, trening);
 	}
 
@@ -40,6 +40,42 @@ public class CRUDTrening {
 	public List<Trener> GetTrenere(IDBService service){
 
 		return service.GetTrenere();
+	}
+
+	/// 
+	/// <param name="osoba"></param>
+	/// <param name="trening"></param>
+	/// <param name="service"></param>
+	public string DeleteTrening(Osoba osoba, Trening trening, IDBService service){
+
+		undoRedo.InsertInUnDoRedoForDelete(trening);
+		return service.DeleteTrening(osoba, trening);
+	}
+
+	/// 
+	/// <param name="admin"></param>
+	/// <param name="service"></param>
+	public List<Trening> GetTreninge(Admin admin, IDBService service){
+
+		return service.GetTreninge(admin);
+	}
+
+	/// 
+	/// <param name="vezbac"></param>
+	/// <param name="service"></param>
+	public List<Trening> GetTreninge(Vezbac vezbac, IDBService service){
+
+		return service.GetTreninge(vezbac);
+	}
+
+	/// 
+	/// <param name="vezbacId"></param>
+	/// <param name="service"></param>
+	/// <param name="trening"></param>
+	public string AddTreningVezbac(int vezbacId, IDBService service, Trening trening){
+
+		undoRedo.InsertInUnDoRedoForAdd(trening);
+		return service.AddTreningVezbac(vezbacId, trening);
 	}
 
 }//end CRUDTrening

@@ -14,7 +14,7 @@ using System.ComponentModel.DataAnnotations;
 
 public class Trener : Osoba {
 
-	public List<Trening> trening { get; set; }
+	//public List<Trening> trening { get; set; }
 
 	public Trener(){
 

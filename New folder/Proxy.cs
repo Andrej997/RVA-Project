@@ -143,20 +143,6 @@ public class Proxy : IDBService {
 	}
 
 	/// 
-	/// <param name="vezbac"></param>
-	public string AddTreningVezbac(Vezbac vezbac){
-
-		return "";
-	}
-
-	/// 
-	/// <param name="trening"></param>
-	public string DeleteTrenin(Trening trening){
-
-		return "";
-	}
-
-	/// 
 	/// <param name="adminId"></param>
 	/// <param name="trening"></param>
 	public string AddTreningAdmin(int adminId, Trening trening){
@@ -171,6 +157,38 @@ public class Proxy : IDBService {
 		var list = realService.GetTrenere();
 		LogAccess($"Got {list.Count} trenera from database");
 		return list;
+	}
+
+	/// 
+	/// <param name="osoba"></param>
+	/// <param name="trening"></param>
+	public string DeleteTrening(Osoba osoba, Trening trening){
+
+		var message = realService.DeleteTrening(osoba, trening);
+		LogAccess($"{message}");
+		return message;
+	}
+
+	/// 
+	/// <param name="osoba"></param>
+	public List<Trening> GetTreninge(Osoba osoba){
+
+		var list = realService.GetTreninge(osoba);
+		if (list == null)
+			LogAccess($"Internal server error for user {osoba.ID}");
+		else
+			LogAccess($"Got {list.Count} treninge for user {osoba.ID} from database");
+		return list;
+	}
+
+	/// 
+	/// <param name="vezbacId"></param>
+	/// <param name="trening"></param>
+	public string AddTreningVezbac(int vezbacId, Trening trening){
+
+		var message = realService.AddTreningVezbac(vezbacId, trening);
+		LogAccess($"{message}");
+		return message;
 	}
 
 }//end Proxy

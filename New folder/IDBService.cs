@@ -13,7 +13,7 @@ using System.IO;
 
 
 
-public interface IDBService           {
+public interface IDBService              {
 
 	/// 
 	/// <param name="loginUser"></param>
@@ -56,17 +56,23 @@ public interface IDBService           {
 	string ChangeVezbac(Vezbac vezbac);
 
 	/// 
-	/// <param name="vezbac"></param>
-	string AddTreningVezbac(Vezbac vezbac);
-
-	/// 
-	/// <param name="trening"></param>
-	string DeleteTrenin(Trening trening);
-
-	/// 
 	/// <param name="adminId"></param>
 	/// <param name="trening"></param>
 	string AddTreningAdmin(int adminId, Trening trening);
 
 	List<Trener> GetTrenere();
+
+	/// 
+	/// <param name="osoba"></param>
+	/// <param name="trening"></param>
+	string DeleteTrening(Osoba osoba, Trening trening);
+
+	/// 
+	/// <param name="osoba"></param>
+	List<Trening> GetTreninge(Osoba osoba);
+
+	/// 
+	/// <param name="vezbacId"></param>
+	/// <param name="trening"></param>
+	string AddTreningVezbac(int vezbacId, Trening trening);
 }//end IDBService

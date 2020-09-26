@@ -47,6 +47,22 @@ namespace Common
         string AddTreningAdmin(int adminId, Trening trening);
 
         [OperationContract]
+        string AddTreningVezbac(int vezbacId, Trening trening);
+
+        [OperationContract]
+        string DeleteTrening(Admin admin, Trening trening);
+
+        [OperationContract]
+        string DeleteTreningV(Vezbac vezbac, Trening trening);
+
+        [OperationContract]
         List<Trener> GetTrenere();
+
+        [OperationContract]
+        List<Trening> GetTreninge(Admin admin);
+
+        [OperationContract]
+        List<Trening> GetTreningeV(Vezbac vezbac);
+
     }
 }
