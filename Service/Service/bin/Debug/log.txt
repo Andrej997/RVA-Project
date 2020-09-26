@@ -330,3 +330,65 @@
 [9/26/2020 4:23:35 PM] -- Got 3 trenera from database
 [9/26/2020 4:23:35 PM] -- Got 3 treninge for user 1 from database
 [9/26/2020 4:23:37 PM] -- Successfully added trening to vezbac (1)
+[9/26/2020 6:11:25 PM] -- Got 2 admins from database
+[9/26/2020 6:11:26 PM] -- Got 1 vezbace from database
+[9/26/2020 6:11:26 PM] -- Got 3 trenera from database
+[9/26/2020 6:11:31 PM] -- Admin [admin2] logged in!
+[9/26/2020 6:11:33 PM] -- Got 3 trenera from database
+[9/26/2020 6:11:33 PM] -- Got 5 treninge for user 2 from database
+[9/26/2020 6:11:37 PM] -- Successfully removed trening to admin (2)
+[9/26/2020 6:11:43 PM] -- admin2 logged out!
+[9/26/2020 6:11:44 PM] -- Got 2 admins from database
+[9/26/2020 6:11:44 PM] -- Got 1 vezbace from database
+[9/26/2020 6:11:54 PM] -- Vezbac [vezbac1] logged in!
+[9/26/2020 6:11:55 PM] -- Got 3 trenera from database
+[9/26/2020 6:11:56 PM] -- Got 4 treninge for user 1 from database
+[9/26/2020 6:12:00 PM] -- Successfully removed trening to vezbac (1)
+[9/26/2020 6:12:04 PM] -- Got 3 trenera from database
+[9/26/2020 6:12:04 PM] -- Got 4 treninge for user 1 from database
+[9/26/2020 6:12:16 PM] -- Got 3 trenera from database
+[9/26/2020 6:12:16 PM] -- Got 4 treninge for user 1 from database
+[9/26/2020 6:15:56 PM] -- Got 2 admins from database
+[9/26/2020 6:15:56 PM] -- Got 1 vezbace from database
+[9/26/2020 6:15:57 PM] -- Got 3 trenera from database
+[9/26/2020 6:16:03 PM] -- Admin [admin2] logged in!
+[9/26/2020 6:16:04 PM] -- Got 3 trenera from database
+[9/26/2020 6:16:04 PM] -- Got 5 treninge for user 2 from database
+[9/26/2020 6:16:13 PM] -- Failed to remove trening to admin (2)
+[9/26/2020 6:16:32 PM] -- Got 3 trenera from database
+[9/26/2020 6:16:32 PM] -- Got 5 treninge for user 2 from database
+[9/26/2020 6:19:31 PM] -- Got 2 admins from database
+[9/26/2020 6:19:31 PM] -- Got 1 vezbace from database
+[9/26/2020 6:19:31 PM] -- Got 3 trenera from database
+[9/26/2020 6:19:42 PM] -- Vezbac [vezbac1] logged in!
+[9/26/2020 6:19:43 PM] -- Got 3 trenera from database
+[9/26/2020 6:19:44 PM] -- Got 4 treninge for user 1 from database
+[9/26/2020 6:19:47 PM] -- Got 3 trenera from database
+[9/26/2020 6:19:47 PM] -- Got 4 treninge for user 1 from database
+[9/26/2020 6:21:03 PM] -- Got 2 admins from database
+[9/26/2020 6:21:03 PM] -- Got 1 vezbace from database
+[9/26/2020 6:21:03 PM] -- Got 3 trenera from database
+[9/26/2020 6:21:12 PM] -- Vezbac [vezbac1] logged in!
+[9/26/2020 6:21:14 PM] -- Got 3 trenera from database
+[9/26/2020 6:21:14 PM] -- Got 4 treninge for user 1 from database
+[9/26/2020 6:21:33 PM] -- Successfully removed trening to vezbac (1)
+[9/26/2020 6:22:18 PM] -- Got 3 trenera from database
+[9/26/2020 6:22:18 PM] -- Got 4 treninge for user 1 from database
+[9/26/2020 6:28:39 PM] -- Got 2 admins from database
+[9/26/2020 6:28:39 PM] -- Got 1 vezbace from database
+[9/26/2020 6:28:39 PM] -- Got 3 trenera from database
+[9/26/2020 6:28:46 PM] -- Admin [admin2] logged in!
+[9/26/2020 6:28:47 PM] -- Got 3 trenera from database
+[9/26/2020 6:28:47 PM] -- Got 5 treninge for user 2 from database
+[9/26/2020 6:28:57 PM] -- Successfully removed trening to admin (2)
+[9/26/2020 6:29:04 PM] -- Got 3 trenera from database
+[9/26/2020 6:29:04 PM] -- Got 4 treninge for user 2 from database
+[9/26/2020 6:29:19 PM] -- admin2 logged out!
+[9/26/2020 6:29:20 PM] -- Got 2 admins from database
+[9/26/2020 6:29:20 PM] -- Got 1 vezbace from database
+[9/26/2020 6:29:29 PM] -- Vezbac [vezbac1] logged in!
+[9/26/2020 6:29:31 PM] -- Got 3 trenera from database
+[9/26/2020 6:29:31 PM] -- Got 4 treninge for user 1 from database
+[9/26/2020 6:29:33 PM] -- Successfully removed trening to vezbac (1)
+[9/26/2020 6:29:36 PM] -- Got 3 trenera from database
+[9/26/2020 6:29:36 PM] -- Got 3 treninge for user 1 from database

@@ -34,7 +34,10 @@ public class DeleteTrening : ICommandUR {
 
 	public string ExecuteA(int id, IDBService service)
 	{
-		throw new NotImplementedException();
+		var osoba = new Admin();
+		osoba.ID = id;
+		osoba.Role = 0;
+		return service.DeleteTrening(osoba, trening);
 	}
 
 	public string UnExecuteA(Osoba osoba, IDBService service)
@@ -47,7 +50,10 @@ public class DeleteTrening : ICommandUR {
 	/// <param name="service"></param>
 	public string ExecuteV(int id, IDBService service){
 
-		return "";
+		var osoba = new Vezbac();
+		osoba.ID = id;
+		osoba.Role = 1;
+		return service.DeleteTrening(osoba, trening);
 	}
 
 	/// 

@@ -50,11 +50,15 @@ public class UndoRedo {
 
 	/// 
 	/// <param name="trening"></param>
-	public void InsertInUnDoRedoForDelete(IDBService service, Trening trening){
-
+	public void InsertInUnDoRedoForDelete(Osoba osoba, IDBService service, Trening trening, out string message)
+	{
+		message = "";
 		ICommandUR commandUR = new DeleteTrening(trening);
 
-		//commandUR.Execute();
+		if (osoba.Role == 0)
+			message = commandUR.ExecuteA(osoba.ID, service);
+		else
+			message = commandUR.ExecuteV(osoba.ID, service);
 
 		_Undocommands.Push(commandUR);
 		_Redocommands.Clear();

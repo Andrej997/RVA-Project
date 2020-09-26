@@ -267,48 +267,60 @@ public class DBService : IDBService {
 		{
 			try
 			{
-				if (osoba.Role == 0)
-				{
-					Admin admin = null;
-
-					admin = commonContex.Admin
-						.Where(x => x.ID == osoba.ID)
-						.Include(x => x.treninzi)
+				var treningEntity = commonContex.Trening
+						.Where(x => x.ID == trening.ID)
 						.FirstOrDefault();
+				commonContex.Trening.Remove(treningEntity);
+				commonContex.SaveChanges();
+				//if (osoba.Role == 0)
+				//{
+				//	Admin admin = null;
 
-					if (admin == null)
-						return $"No admin with id: {osoba.ID}";
+				//	admin = commonContex.Admin
+				//		.Where(x => x.ID == osoba.ID)
+				//		.Include(x => x.treninzi)
+				//		.FirstOrDefault();
 
-					if (admin.treninzi == null)
-						return $"Admin with id: {osoba.ID} doesn't have treninge";
+				//	if (admin == null)
+				//		return $"No admin with id: {osoba.ID}";
 
-					admin.treninzi.Remove(trening);
+				//	if (admin.treninzi == null)
+				//		return $"Admin with id: {osoba.ID} doesn't have treninge";
 
-					commonContex.Entry(admin)
-						.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-					commonContex.SaveChanges();
-				}
-				else
-				{
-					Vezbac  vezbac = null;
+				//	admin.treninzi.Remove(trening);
 
-					vezbac = commonContex.Vezbac
-						.Where(x => x.ID == osoba.ID)
-						.Include(x => x.treninzi)
-						.FirstOrDefault();
+				//	commonContex.Entry(admin)
+				//		.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+				//	commonContex.Entry(admin.treninzi)
+				//		.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 
-					if (vezbac == null)
-						return $"No vezbac with id: {osoba.ID}";
+				//	commonContex.SaveChanges();
+				//}
+				//else
+				//{
+				//	Vezbac  vezbac = null;
 
-					if (vezbac.treninzi == null)
-						return $"Vezbac with id: {osoba.ID} doesn't have treninge";
+				//	vezbac = commonContex.Vezbac
+				//		.Where(x => x.ID == osoba.ID)
+				//		.Include(x => x.treninzi)
+				//		.FirstOrDefault();
 
-					vezbac.treninzi.Remove(trening);
+				//	if (vezbac == null)
+				//		return $"No vezbac with id: {osoba.ID}";
 
-					commonContex.Entry(vezbac)
-						.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-					commonContex.SaveChanges();
-				}
+				//	if (vezbac.treninzi == null)
+				//		return $"Vezbac with id: {osoba.ID} doesn't have treninge";
+
+				//	vezbac.treninzi.Remove(trening);
+
+				//	//commonContex.Entry(vezbac.treninzi)
+				//	//	.State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+				//	//commonContex.Entry(vezbac)
+				//	//	.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+
+
+				//	commonContex.SaveChanges();
+				//}
 			}
 			catch
 			{

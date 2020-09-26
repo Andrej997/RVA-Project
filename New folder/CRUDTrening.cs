@@ -50,8 +50,10 @@ public class CRUDTrening {
 	/// <param name="service"></param>
 	public string DeleteTrening(Osoba osoba, Trening trening, IDBService service){
 
-		//undoRedo.InsertInUnDoRedoForDelete(trening);
-		return service.DeleteTrening(osoba, trening);
+		string message = "";
+		undoRedo.InsertInUnDoRedoForDelete(osoba, service, trening, out message);
+		return message;
+		//return service.DeleteTrening(osoba, trening);
 	}
 
 	/// 
