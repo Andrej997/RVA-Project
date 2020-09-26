@@ -116,5 +116,14 @@ namespace Common
             LogInOut.Logout(username, proxy);
         }
 
+        public string Redo()
+        {
+            return CRUDTrening.Redo();
+        }
+
+        public string Undo()
+        {
+            return CRUDTrening.Undo();
+        }
     }
 }

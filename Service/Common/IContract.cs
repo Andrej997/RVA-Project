@@ -64,5 +64,11 @@ namespace Common
         [OperationContract]
         List<Trening> GetTreningeV(Vezbac vezbac);
 
+        [OperationContract]
+        string Undo();
+
+        [OperationContract]
+        string Redo();
+
     }
 }

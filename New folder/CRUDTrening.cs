@@ -84,4 +84,14 @@ public class CRUDTrening {
 		//return service.AddTreningVezbac(vezbacId, trening);
 	}
 
+	public string Redo(){
+
+		return undoRedo.Redo();
+	}
+
+	public string Undo(){
+
+		return undoRedo.Undo();
+	}
+
 }//end CRUDTrening

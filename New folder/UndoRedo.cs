@@ -19,7 +19,7 @@ public class UndoRedo {
 	private Stack<ICommandUR> _Undocommands = new Stack<ICommandUR>();
 
 	private int id { get; set; }
-
+	private int role { get; set; }
 	private IDBService service { get; set; }
 
 	public UndoRedo(){
@@ -43,6 +43,7 @@ public class UndoRedo {
 
 		this.id = id;
 		this.service = service;
+		this.role = role;
 
 		_Undocommands.Push(commandUR);
 		_Redocommands.Clear();
@@ -60,26 +61,44 @@ public class UndoRedo {
 		else
 			message = commandUR.ExecuteV(osoba.ID, service);
 
+		this.id = osoba.ID;
+		this.service = service;
+		this.role = osoba.Role;
+
 		_Undocommands.Push(commandUR);
 		_Redocommands.Clear();
 	}
 
-	public void Redo(){
+	public string Redo(){
+		string message = "";
 		if (_Redocommands.Count != 0)
 		{
 			ICommandUR commandUR = _Redocommands.Pop();
-			commandUR.ExecuteA(this.id, this.service);
+
+			if (this.role == 0)
+				message = commandUR.ExecuteA(this.id, this.service);
+			else
+				message = commandUR.ExecuteV(this.id, this.service);
+
 			_Undocommands.Push(commandUR);
 		}
+		return message != "" ? message : "There are no previous action!";
 	}
 
-	public void Undo(){
+	public string Undo(){
+		string message = "";
 		if (_Undocommands.Count != 0)
 		{
 			ICommandUR commandUR = _Undocommands.Pop();
-			//commandUR.UnExecuteA();
+
+			if (this.role == 0)
+				message = commandUR.UnExecuteA(this.id, this.service);
+			else
+				message = commandUR.UnExecuteV(this.id, this.service);
+
 			_Redocommands.Push(commandUR);
 		}
+		return message != "" ? message : "There are no previous action!";
 	}
 
 }//end UndoRedo

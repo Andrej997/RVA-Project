@@ -17,9 +17,9 @@ public interface ICommandUR  {
 
 	string ExecuteA(int id, IDBService service);
 
-	string UnExecuteA(Osoba osoba, IDBService service);
+	string UnExecuteA(int id, IDBService service);
 
 	string ExecuteV(int id, IDBService service);
 
-	string UnExecuteV(Osoba osoba, IDBService service);
+	string UnExecuteV(int id, IDBService service);
 }//end ICommandUR//end ICommand

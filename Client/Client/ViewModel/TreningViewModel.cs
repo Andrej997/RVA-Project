@@ -134,12 +134,14 @@ namespace Client.ViewModel
 
         private void Undo()
         {
-
+            Error = InternalData.Data.service.Undo();
+            MessageBox.Show(Error);
         }
 
         private void Redo()
         {
-
+            Error = InternalData.Data.service.Redo();
+            MessageBox.Show(Error);
         }
     }
 }

@@ -33,11 +33,15 @@ public class AddTrening : ICommandUR {
 
 	public string ExecuteA(int id, IDBService service)
 	{
+		trening.ID = 0;
 		return service.AddTreningAdmin(id, trening);
 	}
 
-	public string UnExecuteA(Osoba osoba, IDBService service)
+	public string UnExecuteA(int id, IDBService service)
 	{
+		var osoba = new Admin();
+		osoba.ID = id;
+		osoba.Role = 0;
 		return service.DeleteTrening(osoba, trening);
 	}
 
@@ -46,14 +50,18 @@ public class AddTrening : ICommandUR {
 	/// <param name="service"></param>
 	public string ExecuteV(int id, IDBService service){
 
+		trening.ID = 0;
 		return service.AddTreningVezbac(id, trening);
 	}
 
 	/// 
 	/// <param name="osoba"></param>
 	/// <param name="service"></param>
-	public string UnExecuteV(Osoba osoba, IDBService service){
+	public string UnExecuteV(int id, IDBService service){
 
+		var osoba = new Vezbac();
+		osoba.ID = id;
+		osoba.Role = 1;
 		return service.DeleteTrening(osoba, trening);
 	}
 
