@@ -32,12 +32,29 @@ public class DeleteTrening : ICommandUR {
 		this.trening = trening;
 	}
 
-	public void Execute(){
-
+	public string ExecuteA(int id, IDBService service)
+	{
+		throw new NotImplementedException();
 	}
 
-	public void UnExecute(){
-
+	public string UnExecuteA(Osoba osoba, IDBService service)
+	{
+		throw new NotImplementedException();
 	}
 
+	/// 
+	/// <param name="id"></param>
+	/// <param name="service"></param>
+	public string ExecuteV(int id, IDBService service){
+
+		return "";
+	}
+
+	/// 
+	/// <param name="osoba"></param>
+	/// <param name="service"></param>
+	public string UnExecuteV(Osoba osoba, IDBService service){
+
+		return "";
+	}
 }//end DeleteTrening

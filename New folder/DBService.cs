@@ -239,7 +239,7 @@ public class DBService : IDBService {
 					.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 				commonContex.SaveChanges();
 			}
-			catch
+			catch (Exception e)
 			{
 				return $"Failed to add trening to admin ({adminId})";
 			}
@@ -357,6 +357,7 @@ public class DBService : IDBService {
 					vezbac = commonContex.Vezbac
 						.Where(x => x.ID == osoba.ID)
 						.Include(x => x.treninzi)
+							.ThenInclude(x => x.Trener)
 						.FirstOrDefault();
 
 					if (vezbac == null)

@@ -15,7 +15,11 @@ using System.IO;
 
 public interface ICommandUR  {
 
-	void Execute();
+	string ExecuteA(int id, IDBService service);
 
-	void UnExecute();
+	string UnExecuteA(Osoba osoba, IDBService service);
+
+	string ExecuteV(int id, IDBService service);
+
+	string UnExecuteV(Osoba osoba, IDBService service);
 }//end ICommandUR//end ICommand

@@ -14,6 +14,7 @@ namespace Common
         private LogInOut LogInOut;
         private CRUDUser CRUDUser;
         private CRUDTrening CRUDTrening;
+        private UndoRedo undoRedo;
 
         public Contract()
         {
@@ -22,6 +23,7 @@ namespace Common
             LogInOut = new LogInOut();
             CRUDUser = new CRUDUser();
             CRUDTrening = new CRUDTrening();
+            undoRedo = new UndoRedo();
         }
 
         public string AddTreningAdmin(int adminId, Trening trening)
@@ -113,5 +115,6 @@ namespace Common
         {
             LogInOut.Logout(username, proxy);
         }
+
     }
 }

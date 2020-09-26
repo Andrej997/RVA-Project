@@ -31,8 +31,10 @@ public class CRUDTrening {
 	/// <param name="trening"></param>
 	public string AddTreningAdmin(int adminId, IDBService service, Trening trening){
 
-		undoRedo.InsertInUnDoRedoForAdd(trening);
-		return service.AddTreningAdmin(adminId, trening);
+		string message = "";
+		undoRedo.InsertInUnDoRedoForAdd(adminId, 0, service, trening, out message);
+		return message;
+		//return service.AddTreningAdmin(adminId, trening);
 	}
 
 	/// 
@@ -48,7 +50,7 @@ public class CRUDTrening {
 	/// <param name="service"></param>
 	public string DeleteTrening(Osoba osoba, Trening trening, IDBService service){
 
-		undoRedo.InsertInUnDoRedoForDelete(trening);
+		//undoRedo.InsertInUnDoRedoForDelete(trening);
 		return service.DeleteTrening(osoba, trening);
 	}
 
@@ -74,8 +76,10 @@ public class CRUDTrening {
 	/// <param name="trening"></param>
 	public string AddTreningVezbac(int vezbacId, IDBService service, Trening trening){
 
-		undoRedo.InsertInUnDoRedoForAdd(trening);
-		return service.AddTreningVezbac(vezbacId, trening);
+		string message = "";
+		undoRedo.InsertInUnDoRedoForAdd(vezbacId, 1, service, trening, out message);
+		return message;
+		//return service.AddTreningVezbac(vezbacId, trening);
 	}
 
 }//end CRUDTrening

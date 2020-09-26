@@ -18,8 +18,11 @@ public class UndoRedo {
 	private Stack<ICommandUR> _Redocommands = new Stack<ICommandUR>();
 	private Stack<ICommandUR> _Undocommands = new Stack<ICommandUR>();
 
-	public UndoRedo(){
+	private int id { get; set; }
 
+	private IDBService service { get; set; }
+
+	public UndoRedo(){
 	}
 
 	~UndoRedo(){
@@ -28,11 +31,18 @@ public class UndoRedo {
 
 	/// 
 	/// <param name="trening"></param>
-	public void InsertInUnDoRedoForAdd(Trening trening){
+	public void InsertInUnDoRedoForAdd(int id, int role, IDBService service, Trening trening, out string message){
 
+		message = "";
 		ICommandUR commandUR = new AddTrening(trening);
 
-		commandUR.Execute();
+		if (role == 0)
+			message = commandUR.ExecuteA(id, service);
+		else
+			message = commandUR.ExecuteV(id, service);
+
+		this.id = id;
+		this.service = service;
 
 		_Undocommands.Push(commandUR);
 		_Redocommands.Clear();
@@ -40,11 +50,11 @@ public class UndoRedo {
 
 	/// 
 	/// <param name="trening"></param>
-	public void InsertInUnDoRedoForDelete(Trening trening){
+	public void InsertInUnDoRedoForDelete(IDBService service, Trening trening){
 
 		ICommandUR commandUR = new DeleteTrening(trening);
 
-		commandUR.Execute();
+		//commandUR.Execute();
 
 		_Undocommands.Push(commandUR);
 		_Redocommands.Clear();
@@ -54,7 +64,7 @@ public class UndoRedo {
 		if (_Redocommands.Count != 0)
 		{
 			ICommandUR commandUR = _Redocommands.Pop();
-			commandUR.Execute();
+			commandUR.ExecuteA(this.id, this.service);
 			_Undocommands.Push(commandUR);
 		}
 	}
@@ -63,7 +73,7 @@ public class UndoRedo {
 		if (_Undocommands.Count != 0)
 		{
 			ICommandUR commandUR = _Undocommands.Pop();
-			commandUR.UnExecute();
+			//commandUR.UnExecuteA();
 			_Redocommands.Push(commandUR);
 		}
 	}

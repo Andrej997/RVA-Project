@@ -43,8 +43,10 @@ namespace Client.ViewModel
 
         public Visibility Visible { get; set; }
 
+
         public TreningViewModel()
         {
+
             if (!InternalData.Data.IsLoggedIn())
                 Visible = Visibility.Visible;
             else
@@ -106,7 +108,9 @@ namespace Client.ViewModel
             trening.Trener = SelektovaniTrener;
             
             if (InternalData.Data.ulogovanaOsova.Role == 0)
+            {
                 Error = InternalData.Data.service.AddTreningAdmin(InternalData.Data.ulogovanaOsova.ID, trening);
+            }
             else
                 Error = InternalData.Data.service.AddTreningVezbac(InternalData.Data.ulogovanaOsova.ID, trening);
 
@@ -131,16 +135,11 @@ namespace Client.ViewModel
         private void Undo()
         {
 
-            //Error = InternalData.Data.service.DeleteAdmin(SelektovaniAdmin);
-            //MessageBox.Show(Error);
-            Treninzi.Remove(SelektovaniTrening);
         }
 
         private void Redo()
         {
-            //Error = InternalData.Data.service.DeleteAdmin(SelektovaniAdmin);
-            //MessageBox.Show(Error);
-            Treninzi.Remove(SelektovaniTrening);
+
         }
     }
 }

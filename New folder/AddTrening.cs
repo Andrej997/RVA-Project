@@ -31,12 +31,30 @@ public class AddTrening : ICommandUR {
 		this.trening = trening;
 	}
 
-	public void Execute(){
-
+	public string ExecuteA(int id, IDBService service)
+	{
+		return service.AddTreningAdmin(id, trening);
 	}
 
-	public void UnExecute(){
+	public string UnExecuteA(Osoba osoba, IDBService service)
+	{
+		return service.DeleteTrening(osoba, trening);
+	}
 
+	/// 
+	/// <param name="id"></param>
+	/// <param name="service"></param>
+	public string ExecuteV(int id, IDBService service){
+
+		return service.AddTreningVezbac(id, trening);
+	}
+
+	/// 
+	/// <param name="osoba"></param>
+	/// <param name="service"></param>
+	public string UnExecuteV(Osoba osoba, IDBService service){
+
+		return service.DeleteTrening(osoba, trening);
 	}
 
 }//end AddTrening
