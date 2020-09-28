@@ -11,7 +11,7 @@
     <UserControl.DataContext>
         <viewModel:LoginViewModel/>
     </UserControl.DataContext>
-    <Grid>
+    <Grid x:Name="Grid">
         <TextBox x:Name="lUsername" HorizontalAlignment="Left" Height="24" 
                  Margin="382,106,0,0" TextWrapping="Wrap" Text="{Binding Username}" 
                  Visibility="{Binding btnLogInVisibility}"

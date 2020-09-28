@@ -16,9 +16,11 @@ using System.Security.Cryptography.X509Certificates;
 using Microsoft.EntityFrameworkCore;
 
 public class DBService : IDBService {
+	public Logger logger;
+
 
 	public DBService(){
-
+		logger = new Logger();
 	}
 
 	~DBService(){
@@ -74,8 +76,9 @@ public class DBService : IDBService {
 				commonContex.SaveChanges();
 				return "Admin successfully created!";
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				logger.LogError(e.Message);
 				return "Faild to create admin!";
 			}
 		}
@@ -95,8 +98,9 @@ public class DBService : IDBService {
 				commonContex.SaveChanges();
 				return "Vezbac successfully created!";
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				logger.LogError(e.Message);
 				return "Faild to create vezbac!";
 			}
 		}
@@ -135,8 +139,9 @@ public class DBService : IDBService {
 				commonContex.Admin.Remove(admin);
 				commonContex.SaveChanges();
 			}
-			catch
+			catch (Exception e)
 			{
+				logger.LogError(e.Message);
 				return $"Failed to deleted admin [{admin.Username}] {admin.FullName}";
 			}
 		}
@@ -154,8 +159,9 @@ public class DBService : IDBService {
 				commonContex.Vezbac.Remove(vezbac);
 				commonContex.SaveChanges();
 			}
-			catch
+			catch (Exception e)
 			{
+				logger.LogError(e.Message);
 				return $"Failed to deleted vezbac [{vezbac.Username}] {vezbac.FullName}";
 			}
 		}
@@ -179,8 +185,9 @@ public class DBService : IDBService {
 					.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 				commonContex.SaveChanges();
 			}
-			catch
+			catch (Exception e)
 			{
+				logger.LogError(e.Message);
 				return $"Failed to update admin [{admin.Username}] {admin.FullName}";
 			}
 		}
@@ -204,8 +211,9 @@ public class DBService : IDBService {
 					.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 				commonContex.SaveChanges();
 			}
-			catch
+			catch (Exception e)
 			{
+				logger.LogError(e.Message);
 				return $"Failed to update vezbac [{vezbac.Username}] {vezbac.FullName}";
 			}
 		}
@@ -241,6 +249,7 @@ public class DBService : IDBService {
 			}
 			catch (Exception e)
 			{
+				logger.LogError(e.Message);
 				return $"Failed to add trening to admin ({adminId})";
 			}
 		}
@@ -322,8 +331,9 @@ public class DBService : IDBService {
 				//	commonContex.SaveChanges();
 				//}
 			}
-			catch
+			catch (Exception e)
 			{
+				logger.LogError(e.Message);
 				if (osoba.Role == 0)
 					return $"Failed to remove trening to admin ({osoba.ID})";
 				else
@@ -381,8 +391,9 @@ public class DBService : IDBService {
 					return vezbac.treninzi;
 				}
 			}
-			catch
+			catch (Exception e)
 			{
+				logger.LogError(e.Message);
 				return null;
 			}
 		}
@@ -415,8 +426,9 @@ public class DBService : IDBService {
 					.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 				commonContex.SaveChanges();
 			}
-			catch
+			catch (Exception e)
 			{
+				logger.LogError(e.Message);
 				return $"Failed to add trening to vezbac ({vezbacId})";
 			}
 		}

@@ -91,7 +91,8 @@ namespace Client.ViewModel
             {
                 InternalData.Data.ulogovanaOsova = admin;
                 SetModel();
-                Error = "";
+                Error = $"Hello {admin.FullName}";
+                MessageBox.Show(Error);
             }
             else
             {
@@ -100,10 +101,14 @@ namespace Client.ViewModel
                 {
                     InternalData.Data.ulogovanaOsova = vezbac;
                     SetModel();
-                    Error = "";
+                    Error = $"Hello {vezbac.FullName}";
+                    MessageBox.Show(Error);
                 }
                 else
+                {
                     Error = errorMessage;
+                    MessageBox.Show(Error);
+                }
             }
         }
 

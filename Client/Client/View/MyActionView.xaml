@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Client.View.MyActionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.View"
+             mc:Ignorable="d" 
+             Background="White"
+             xmlns:viewModel="clr-namespace:Client.ViewModel"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewModel:MyActionViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <DataGrid Name="dataGridAdmin1s" ToolTip="Table with all admins." 
+                      ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
+                      ItemsSource="{Binding MyActions}" 
+                      AutoGenerateColumns="False" IsReadOnly="True" Margin="58,83,75,44" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Timestamp:" Width="*" Binding="{Binding Timestamp}"/>
+                <DataGridTextColumn Header="Message:" Width="*" Binding="{Binding Message}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

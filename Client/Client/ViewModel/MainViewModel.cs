@@ -15,6 +15,7 @@ namespace Client.ViewModel
         private GetAllAdminsViewModel GetAllAdminsViewModel;
         private LoginViewModel loginViewModel;
         private TreningViewModel treningViewModel;
+        private MyActionViewModel MyActionViewModel;
 
         private BindableBase trenutniViewModel;
         public BindableBase TrenutniViewModel
@@ -47,6 +48,7 @@ namespace Client.ViewModel
             loginViewModel = new LoginViewModel();
             GetAllAdminsViewModel = new GetAllAdminsViewModel();
             treningViewModel = new TreningViewModel();
+            MyActionViewModel = new MyActionViewModel();
         }
 
         public void Navig(string odabir)
@@ -64,6 +66,9 @@ namespace Client.ViewModel
                     break;
                 case "Get admins":
                     TrenutniViewModel = GetAllAdminsViewModel;
+                    break;
+                case "My actions":
+                    TrenutniViewModel = MyActionViewModel;
                     break;
                 case "Login":
                     TrenutniViewModel = loginViewModel;

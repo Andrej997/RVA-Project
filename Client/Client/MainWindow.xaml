@@ -30,6 +30,10 @@
             <view:GetAllAdminsView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type viewModel:MyActionViewModel}">
+            <view:MyActionView/>
+        </DataTemplate>
+
         <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
             <view:LoginView/>
         </DataTemplate>
@@ -85,6 +89,16 @@
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal" >
                             <TextBlock Foreground="White" Text="Get users" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+
+                <MenuItem Width="80" Command="{Binding Navigacija}" CommandParameter="My actions" 
+                          ToolTip="My actions">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Foreground="White" Text="My actions" 
                                        HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </StackPanel>
                     </MenuItem.Header>

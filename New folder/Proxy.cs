@@ -16,23 +16,22 @@ using System.IO;
 public class Proxy : IDBService {
 
 	private DBService realService;
-
+	
+	public Logger logger = new Logger();
 	~Proxy(){
 
 	}
 
 	public Proxy(){
-
+		
 	}
 
 	public void LogAccess(string message)
 	{
-		var text = $"[{DateTime.Now}] -- {message}";
-		Console.WriteLine(text);
-		using (StreamWriter w = File.AppendText("log.txt"))
-		{
-			w.WriteLine(text);
-		}
+		var text = $"[{DateTime.Now}] - {message}";
+		//Console.WriteLine(text);
+		logger.LogInTxt(text);
+		logger.LogInfo(text);
 	}
 
 	/// 
@@ -48,7 +47,7 @@ public class Proxy : IDBService {
 		var admin = realService.FindAdmin(loginUser);
 		if (admin != null)
 		{
-			LogAccess($"Admin [{admin.Username}] logged in!");
+			LogAccess($"(ID={admin.ID},Role={admin.Role}) - Admin [{admin.Username}] logged in!");
 		}
 
 		return admin;
@@ -61,7 +60,7 @@ public class Proxy : IDBService {
 		var vezbac = realService.FindVezbac(loginUser);
 		if (vezbac != null)
 		{
-			LogAccess($"Vezbac [{vezbac.Username}] logged in!");
+			LogAccess($"(ID={vezbac.ID},Role={vezbac.Role}) - Vezbac [{vezbac.Username}] logged in!");
 		}
 
 		return vezbac;
@@ -148,7 +147,7 @@ public class Proxy : IDBService {
 	public string AddTreningAdmin(int adminId, Trening trening){
 
 		var message = realService.AddTreningAdmin(adminId, trening);
-		LogAccess($"{message}");
+		LogAccess($"(ID={adminId},Role=0) - {message}");
 		return message;
 	}
 
@@ -165,7 +164,7 @@ public class Proxy : IDBService {
 	public string DeleteTrening(Osoba osoba, Trening trening){
 
 		var message = realService.DeleteTrening(osoba, trening);
-		LogAccess($"{message}");
+		LogAccess($"(ID={osoba.ID},Role={osoba.Role}) - {message}");
 		return message;
 	}
 
@@ -187,7 +186,7 @@ public class Proxy : IDBService {
 	public string AddTreningVezbac(int vezbacId, Trening trening){
 
 		var message = realService.AddTreningVezbac(vezbacId, trening);
-		LogAccess($"{message}");
+		LogAccess($"(ID={vezbacId},Role=1) - {message}");
 		return message;
 	}
 

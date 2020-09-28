@@ -63,6 +63,7 @@
     </ApplicationDefinition>
     <Compile Include="BindableBase.cs" />
     <Compile Include="InternalData\Data.cs" />
+    <Compile Include="Model\MyAction.cs" />
     <Compile Include="MyICommand.cs" />
     <Compile Include="ValidationBase.cs" />
     <Compile Include="ValidationErrors.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MyActionViewModel.cs" />
     <Compile Include="ViewModel\TreningViewModel.cs" />
     <Compile Include="View\CRUDUserView.xaml.cs">
       <DependentUpon>CRUDUserView.xaml</DependentUpon>
@@ -83,6 +85,9 @@
     </Compile>
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MyActionView.xaml.cs">
+      <DependentUpon>MyActionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TreningView.xaml.cs">
       <DependentUpon>TreningView.xaml</DependentUpon>
@@ -112,6 +117,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MyActionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,8 +165,6 @@
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
