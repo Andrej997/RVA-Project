@@ -191,6 +191,9 @@
     <Compile Include="..\..\New folder\IDBService.cs">
       <Link>Service\IDBService.cs</Link>
     </Compile>
+    <Compile Include="..\..\New folder\InicijalizacijaPodataka.cs">
+      <Link>Service\InicijalizacijaPodataka.cs</Link>
+    </Compile>
     <Compile Include="..\..\New folder\Logger.cs">
       <Link>Service\Logger.cs</Link>
     </Compile>

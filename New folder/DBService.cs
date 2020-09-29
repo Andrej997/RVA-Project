@@ -435,4 +435,11 @@ public class DBService : IDBService {
 		return $"Successfully added trening to vezbac ({vezbacId})";
 	}
 
+	/// 
+	/// <param name="trener"></param>
+	public string CreateTrener(Trener trener){
+
+		return "";
+	}
+
 }//end DBService

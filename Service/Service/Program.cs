@@ -13,6 +13,9 @@ namespace Service
     {
         static void Main(string[] args)
         {
+            var inicijalizacija = new InicijalizacijaPodataka();
+            inicijalizacija.CheckDBData();
+
             Connect.ConnectWCF();
         }
     }

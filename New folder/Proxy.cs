@@ -17,7 +17,7 @@ public class Proxy : IDBService {
 
 	private DBService realService;
 	
-	public Logger logger = new Logger();
+	public Logger logger;
 	~Proxy(){
 
 	}
@@ -188,6 +188,13 @@ public class Proxy : IDBService {
 		var message = realService.AddTreningVezbac(vezbacId, trening);
 		LogAccess($"(ID={vezbacId},Role=1) - {message}");
 		return message;
+	}
+
+	/// 
+	/// <param name="trener"></param>
+	public string CreateTrener(Trener trener){
+
+		return "";
 	}
 
 }//end Proxy
