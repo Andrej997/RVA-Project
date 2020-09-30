@@ -53,5 +53,9 @@ public class Admin : Osoba {
 		get;
 		set;
 	}
-
+	
+	public override DateTime LastChanged{
+		get;
+		set;
+	}
 }//end Admin

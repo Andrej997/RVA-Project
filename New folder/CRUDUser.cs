@@ -85,4 +85,11 @@ public class CRUDUser {
 		return service.ChangeVezbac(vezbac);
 	}
 
+	/// 
+	/// <param name="trener"></param>
+	public string CreateTrener(Trener trener, IDBService service){
+
+		return service.CreateTrener(trener);
+	}
+
 }//end CRUDUser

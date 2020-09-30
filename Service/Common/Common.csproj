@@ -239,6 +239,10 @@
     <Compile Include="Migrations\20200924170416_Update1.designer.cs">
       <DependentUpon>20200924170416_Update1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20200930194329_LastChanged.cs" />
+    <Compile Include="Migrations\20200930194329_LastChanged.designer.cs">
+      <DependentUpon>20200930194329_LastChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\CommonContexModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -26,6 +26,10 @@
             <view:CRUDUserView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type viewModel:TrenerViewModel}">
+            <view:TrenerView/>
+        </DataTemplate>
+
         <DataTemplate DataType="{x:Type viewModel:GetAllAdminsViewModel}">
             <view:GetAllAdminsView/>
         </DataTemplate>
@@ -79,6 +83,16 @@
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal" >
                             <TextBlock Foreground="White" Text="Create user" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+
+                <MenuItem Width="80" Command="{Binding Navigacija}" CommandParameter="Treneri" 
+                          ToolTip="Treneri">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Foreground="White" Text="Treneri" 
                                        HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </StackPanel>
                     </MenuItem.Header>

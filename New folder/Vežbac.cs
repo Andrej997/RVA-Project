@@ -54,4 +54,9 @@ public class Vezbac : Osoba {
 		set;
 	}
 
+	public override DateTime LastChanged{
+		get;
+		set;
+	}
+
 }//end Vezbac

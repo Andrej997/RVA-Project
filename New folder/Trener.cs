@@ -54,4 +54,9 @@ public class Trener : Osoba {
 		set;
 	}
 
+	public override DateTime LastChanged{
+		get;
+		set;
+	}
+
 }//end Trener

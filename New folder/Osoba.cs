@@ -50,4 +50,9 @@ public abstract class Osoba {
 		set;
 	}
 
+	public abstract DateTime LastChanged{
+		get;
+		set;
+	}
+
 }//end Osoba

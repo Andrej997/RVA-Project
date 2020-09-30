@@ -21,7 +21,7 @@ namespace Client.ViewModel
 
         private void Load()
         {
-            string filename = @"D:\FAX\8.SEMESTAR\RVA\RVA-Project\Service\Service\bin\Debug\log.txt";
+            string filename = "../../../../log.txt";
             while (IsFileReady(filename)) 
             {
                 Read(filename);

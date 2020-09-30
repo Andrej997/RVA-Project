@@ -121,3 +121,57 @@
 [9/29/2020 9:38:05 PM] - Got 2 admins from database
 [9/29/2020 9:38:05 PM] - Got 1 vezbace from database
 [9/29/2020 9:38:05 PM] - Got 3 trenera from database
+[9/29/2020 9:43:53 PM] - Got 2 admins from database
+[9/29/2020 9:43:53 PM] - Got 1 vezbace from database
+[9/29/2020 9:43:53 PM] - Got 3 trenera from database
+[9/29/2020 9:43:59 PM] - (ID=1,Role=0) - Admin [admin] logged in!
+[9/29/2020 9:45:22 PM] - Got 2 admins from database
+[9/29/2020 9:45:22 PM] - Got 1 vezbace from database
+[9/29/2020 9:45:22 PM] - Got 3 trenera from database
+[9/29/2020 9:45:30 PM] - (ID=1,Role=0) - Admin [admin] logged in!
+[9/29/2020 9:46:10 PM] - Got 2 admins from database
+[9/29/2020 9:46:11 PM] - Got 1 vezbace from database
+[9/29/2020 9:46:11 PM] - Got 3 trenera from database
+[9/29/2020 9:46:17 PM] - (ID=1,Role=0) - Admin [admin] logged in!
+[9/30/2020 10:49:49 PM] - Got 2 admins from database
+[9/30/2020 10:49:49 PM] - Got 1 vezbace from database
+[9/30/2020 10:49:49 PM] - Got 3 trenera from database
+[9/30/2020 10:49:57 PM] - Got 3 trenera from database
+[9/30/2020 10:49:58 PM] - Got 3 trenera from database
+[9/30/2020 10:49:59 PM] - Got 2 admins from database
+[9/30/2020 10:49:59 PM] - Got 1 vezbace from database
+[9/30/2020 10:53:44 PM] - Got 2 admins from database
+[9/30/2020 10:53:44 PM] - Got 1 vezbace from database
+[9/30/2020 10:53:45 PM] - Got 3 trenera from database
+[9/30/2020 10:53:45 PM] - Got 3 trenera from database
+[9/30/2020 10:55:02 PM] - Got 2 admins from database
+[9/30/2020 10:55:02 PM] - Got 1 vezbace from database
+[9/30/2020 10:55:02 PM] - Got 3 trenera from database
+[9/30/2020 10:55:02 PM] - Got 3 trenera from database
+[9/30/2020 10:55:58 PM] - Got 2 admins from database
+[9/30/2020 10:55:58 PM] - Got 1 vezbace from database
+[9/30/2020 10:55:58 PM] - Got 3 trenera from database
+[9/30/2020 10:55:58 PM] - Got 3 trenera from database
+[9/30/2020 10:56:06 PM] - Got 2 admins from database
+[9/30/2020 10:56:06 PM] - Got 1 vezbace from database
+[9/30/2020 10:56:17 PM] - (ID=1,Role=0) - Admin [admin] logged in!
+[9/30/2020 10:56:25 PM] - Got 2 admins from database
+[9/30/2020 10:56:25 PM] - Got 1 vezbace from database
+[9/30/2020 10:56:32 PM] - Got 2 admins from database
+[9/30/2020 10:56:32 PM] - Got 1 vezbace from database
+[9/30/2020 10:58:06 PM] - Got 2 admins from database
+[9/30/2020 10:58:06 PM] - Got 1 vezbace from database
+[9/30/2020 10:58:06 PM] - Got 3 trenera from database
+[9/30/2020 10:58:06 PM] - Got 3 trenera from database
+[9/30/2020 10:58:10 PM] - Got 3 trenera from database
+[9/30/2020 10:58:18 PM] - (ID=1,Role=0) - Admin [admin] logged in!
+[9/30/2020 10:58:20 PM] - Got 3 trenera from database
+[9/30/2020 10:59:46 PM] - Trener successfully created!
+[9/30/2020 11:02:13 PM] - Got 2 admins from database
+[9/30/2020 11:02:13 PM] - Got 1 vezbace from database
+[9/30/2020 11:02:13 PM] - Got 4 trenera from database
+[9/30/2020 11:02:13 PM] - Got 4 trenera from database
+[9/30/2020 11:02:47 PM] - Got 4 trenera from database
+[9/30/2020 11:02:52 PM] - (ID=1,Role=0) - Admin [admin] logged in!
+[9/30/2020 11:03:01 PM] - Got 4 trenera from database
+[9/30/2020 11:03:14 PM] - Trener successfully created!

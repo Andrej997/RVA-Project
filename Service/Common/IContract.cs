@@ -70,5 +70,7 @@ namespace Common
         [OperationContract]
         string Redo();
 
+        [OperationContract]
+        string CreateTrener(Trener trener);
     }
 }

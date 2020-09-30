@@ -73,6 +73,7 @@
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MyActionViewModel.cs" />
+    <Compile Include="ViewModel\TrenerViewModel.cs" />
     <Compile Include="ViewModel\TreningViewModel.cs" />
     <Compile Include="View\CRUDUserView.xaml.cs">
       <DependentUpon>CRUDUserView.xaml</DependentUpon>
@@ -88,6 +89,9 @@
     </Compile>
     <Compile Include="View\MyActionView.xaml.cs">
       <DependentUpon>MyActionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrenerView.xaml.cs">
+      <DependentUpon>TrenerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TreningView.xaml.cs">
       <DependentUpon>TreningView.xaml</DependentUpon>
@@ -121,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MyActionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrenerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

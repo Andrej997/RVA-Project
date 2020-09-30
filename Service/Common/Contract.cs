@@ -51,6 +51,11 @@ namespace Common
             return CRUDUser.CreateAdmin(admin, proxy);
         }
 
+        public string CreateTrener(Trener trener)
+        {
+            return CRUDUser.CreateTrener(trener, proxy);
+        }
+
         public string CreateVezbac(Vezbac vezbac)
         {
             return CRUDUser.CreateVezbac(vezbac, proxy);

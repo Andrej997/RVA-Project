@@ -33,7 +33,7 @@ public class Logger {
 	/// <param name="message"></param>
 	public void LogInTxt(string message){
 
-		using (StreamWriter w = File.AppendText("log.txt"))
+		using (StreamWriter w = File.AppendText("../../../../log.txt"))
 		{
 			w.WriteLine(message);
 		}

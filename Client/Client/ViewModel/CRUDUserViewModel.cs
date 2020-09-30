@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace Client.ViewModel
 {
@@ -55,7 +56,8 @@ namespace Client.ViewModel
                 Username = Username,
                 Password = Password,
                 FullName = FullName,
-                Role = 0
+                Role = 0,
+                LastChanged = DateTime.Now
             };
             Error = InternalData.Data.service.CreateAdmin(admin);
         }
@@ -67,7 +69,8 @@ namespace Client.ViewModel
                 Username = Username,
                 Password = Password,
                 FullName = FullName,
-                Role = 1
+                Role = 1,
+                LastChanged = DateTime.Now
             };
             Error = InternalData.Data.service.CreateVezbac(vezbac);
         }

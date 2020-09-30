@@ -439,7 +439,22 @@ public class DBService : IDBService {
 	/// <param name="trener"></param>
 	public string CreateTrener(Trener trener){
 
-		return "";
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				var ret = commonContex
+					.Trener
+					.Add(trener);
+				commonContex.SaveChanges();
+				return "Trener successfully created!";
+			}
+			catch (Exception e)
+			{
+				logger.LogError(e.Message);
+				return "Faild to create trener!";
+			}
+		}
 	}
 
 }//end DBService

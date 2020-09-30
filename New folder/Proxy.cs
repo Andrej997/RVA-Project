@@ -23,11 +23,14 @@ public class Proxy : IDBService {
 	}
 
 	public Proxy(){
-		
 	}
 
 	public void LogAccess(string message)
 	{
+		if (logger == null)
+		{
+			logger = new Logger();
+		}
 		var text = $"[{DateTime.Now}] - {message}";
 		//Console.WriteLine(text);
 		logger.LogInTxt(text);
@@ -194,7 +197,9 @@ public class Proxy : IDBService {
 	/// <param name="trener"></param>
 	public string CreateTrener(Trener trener){
 
-		return "";
+		var message = realService.CreateTrener(trener);
+		LogAccess($"{message}");
+		return message;
 	}
 
 }//end Proxy
