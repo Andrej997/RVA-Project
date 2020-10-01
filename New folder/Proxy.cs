@@ -202,4 +202,22 @@ public class Proxy : IDBService {
 		return message;
 	}
 
+	/// 
+	/// <param name="trener"></param>
+	public string ChangeTrener(Trener trener){
+
+		var message = realService.ChangeTrener(trener);
+		LogAccess($"{message}");
+		return message;
+	}
+
+	/// 
+	/// <param name="id"></param>
+	public string DeleteTrener(int id){
+
+		var message = realService.DeleteTrener(id);
+		LogAccess($"{message}");
+		return message;
+	}
+
 }//end Proxy

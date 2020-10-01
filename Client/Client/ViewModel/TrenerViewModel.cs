@@ -40,7 +40,9 @@ namespace Client.ViewModel
 
         public MyICommand AddTrener { get; set; }
         public MyICommand ChangeTrener { get; set; }
+        public MyICommand AppyChangeTrener { get; set; }
         public MyICommand DeleteTrener { get; set; }
+        public MyICommand RefreshTrener { get; set; }
 
         public TrenerViewModel()
         {
@@ -74,18 +76,16 @@ namespace Client.ViewModel
 
             AddTrener = new MyICommand(CreateT);
             ChangeTrener = new MyICommand(ChangeT, CanUseT);
+            AppyChangeTrener = new MyICommand(ApplyChange);
             DeleteTrener = new MyICommand(DeleteT, CanUseT);
-
-            Treneri = new ObservableCollection<Trener>();
+            RefreshTrener = new MyICommand(RefreshT);
         }
 
         private void GetTrenere()
         {
-            if (Treneri == null)
-                Treneri = new ObservableCollection<Trener>();
+            Treneri = new ObservableCollection<Trener>();
 
-            var tList = InternalData.Data.service.GetTrenere();
-            foreach (var trener in tList)
+            foreach (var trener in InternalData.Data.service.GetTrenere())
             {
                 Treneri.Add(trener);
             }
@@ -101,23 +101,47 @@ namespace Client.ViewModel
                 FullName = FullnameTB,
                 LastChanged = DateTime.Now
             };
-            Error = InternalData.Data.service.CreateTrener(trener);
+            if (trener.FullName == null || trener.FullName == "")
+                Error = "Fullname field can't be empty!";
+            else
+            {
+                Error = InternalData.Data.service.CreateTrener(trener);
+                Treneri.Add(trener);
+            }
             MessageBox.Show(Error);
-            Treneri.Add(trener);
         }
 
         private void ChangeT()
         {
             //Error = InternalData.Data.service.DeleteAdmin(SelektovaniTrener);
+            //MessageBox.Show(Error);
+            FullnameTB = SelektovaniTrener.FullName;
+        }
+
+        private void ApplyChange()
+        {
+            var trener = new Trener
+            {
+                ID = SelektovaniTrener.ID,
+                Role = 2,
+                LastChanged = DateTime.Now,
+                FullName = FullnameTB
+            };
+            Error = InternalData.Data.service.ChangeTrener(trener);
             MessageBox.Show(Error);
-            SelektovaniTrener.FullName = FullnameTB;
         }
 
         private void DeleteT()
         {
-            //Error = InternalData.Data.service.DeleteAdmin(SelektovaniTrener);
+            Error = InternalData.Data.service.DeleteTrener(SelektovaniTrener.ID);
             MessageBox.Show(Error);
             Treneri.Remove(SelektovaniTrener);
+        }
+
+        private void RefreshT()
+        {
+            //Treneri = new ObservableCollection<Trener>();
+            GetTrenere();
         }
     }
 }

@@ -457,4 +457,61 @@ public class DBService : IDBService {
 		}
 	}
 
+	/// 
+	/// <param name="trener"></param>
+	public string ChangeTrener(Trener trener){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				var tren = commonContex.Trener
+					.FirstOrDefault(x => x.ID == trener.ID);
+
+				tren.FullName = trener.FullName;
+
+				commonContex.Entry(tren)
+					.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+				commonContex.SaveChanges();
+			}
+			catch (Exception e)
+			{
+				logger.LogError(e.Message);
+				return $"Failed to update vezbac {trener.FullName}";
+			}
+		}
+		return $"Successfully update vezbac {trener.FullName}";
+	}
+
+	/// 
+	/// <param name="id"></param>
+	public string DeleteTrener(int id){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				var treninzi = commonContex.Trening
+					.Include(x => x.Trener)
+					.Where(x => x.Trener.ID == id)
+					.ToList();
+
+				commonContex.Trening.RemoveRange(treninzi);
+				commonContex.SaveChanges();
+
+				var tren = commonContex.Trener
+					.FirstOrDefault(x => x.ID == id);
+
+				commonContex.Trener.Remove(tren);
+				commonContex.SaveChanges();
+			}
+			catch (Exception e)
+			{
+				logger.LogError(e.Message);
+				return $"Failed to deleted trener";
+			}
+		}
+		return $"Successfully deleted trener";
+	}
+
 }//end DBService

@@ -92,4 +92,20 @@ public class CRUDUser {
 		return service.CreateTrener(trener);
 	}
 
+	/// 
+	/// <param name="trener"></param>
+	/// <param name="service"></param>
+	public string ChangeTrener(Trener trener, IDBService service){
+
+		return service.ChangeTrener(trener);
+	}
+
+	/// 
+	/// <param name="id"></param>
+	/// <param name="service"></param>
+	public string DeleteTrener(int id, IDBService service){
+
+		return service.DeleteTrener(id);
+	}
+
 }//end CRUDUser

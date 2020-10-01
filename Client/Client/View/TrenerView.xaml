@@ -12,8 +12,9 @@
         <viewModel:TrenerViewModel/>
     </UserControl.DataContext>
     <Grid>
+        <TextBlock x:Name="label4" Foreground="Red" TextWrapping="Wrap" Text="{Binding Error}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="250" Height="97"/>
         <Grid Grid.Row="1" Visibility="{Binding Visible}">
-            <DataGrid Name="dataGridAdmins" ToolTip="Table with all admins." 
+            <DataGrid Name="dataGridTreneri" ToolTip="Table with all trenere." 
                       ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
                       ItemsSource="{Binding Treneri}" SelectedItem="{Binding SelektovaniTrener}"  
                       AutoGenerateColumns="False" IsReadOnly="True" Margin="46,61,291,146" >
@@ -22,19 +23,28 @@
                     <DataGridTextColumn Header="FullName:" Width="*" Binding="{Binding FullName}"/>
                 </DataGrid.Columns>
             </DataGrid>
-        <Label x:Name="label" Content="Fullname" HorizontalAlignment="Left" Margin="596,61,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" 
+
+
+            <Label x:Name="label" Content="Fullname" HorizontalAlignment="Left" Margin="596,61,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" 
                     Margin="596,87,0,0" TextWrapping="Wrap" Text="{Binding FullnameTB, Mode=TwoWay}"
                     VerticalAlignment="Top" Width="120"/>
-        <Button Content="ADD TRENER"
-            Height="30" Command="{Binding AddTrener}" Margin="596,133,84,287"
-            Visibility="{Binding Visible}" Background="Green"/>
-        <Button Content="DELETE TRENER"
-            Height="30" Command="{Binding DeleteTrener}" Margin="596,204,84,216"
-            Visibility="{Binding Visible}" Background="Red"/>
-        <Button Content="CHANGE VEZBAC"
-            Height="30" Command="{Binding ChangeTrener}" Margin="596,274,84,146"
-            Visibility="{Binding Visible}" Background="LightGray"/>
+            <Button Content="ADD TRENER"
+                Height="30" Command="{Binding AddTrener}" Margin="596,133,84,287"
+                Visibility="{Binding Visible}" Background="Green"/>
+            <Button Content="DELETE TRENER"
+                Height="30" Command="{Binding DeleteTrener}" Margin="596,204,84,216"
+                Visibility="{Binding Visible}" Background="Red"/>
+            <Button Content="CHANGE VEZBAC"
+                Height="30" Command="{Binding ChangeTrener}" Margin="596,274,84,146"
+                Visibility="{Binding Visible}" Background="LightGray"/>
+            <Button Content="ACCEPT CHANGE"
+                Height="30" Command="{Binding AppyChangeTrener}" Margin="594,328,86,92"
+                Visibility="{Binding Visible}" Background="LightBlue"/>
+            <!--Button Content="REFRESH"
+                Height="30" Command="{Binding RefreshTrener}" Margin="633,59,47,361"
+                Visibility="{Binding Visible}" Background="Gray"/-->
         </Grid>
+        
     </Grid>
 </UserControl>

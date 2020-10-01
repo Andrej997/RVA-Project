@@ -72,5 +72,11 @@ namespace Common
 
         [OperationContract]
         string CreateTrener(Trener trener);
+
+        [OperationContract]
+        string ChangeTrener(Trener trener);
+
+        [OperationContract]
+        string DeleteTrener(int id);
     }
 }

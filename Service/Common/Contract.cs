@@ -41,6 +41,11 @@ namespace Common
             return CRUDUser.ChangeAdmin(admin, proxy);
         }
 
+        public string ChangeTrener(Trener trener)
+        {
+            return CRUDUser.ChangeTrener(trener, proxy);
+        }
+
         public string ChangeVezbac(Vezbac vezbac)
         {
             return CRUDUser.ChangeVezbac(vezbac, proxy);
@@ -64,6 +69,11 @@ namespace Common
         public string DeleteAdmin(Admin admin)
         {
             return CRUDUser.DeleteAdmin(admin, proxy);
+        }
+
+        public string DeleteTrener(int id)
+        {
+            return CRUDUser.DeleteTrener(id, proxy);
         }
 
         public string DeleteTrening(Admin admin, Trening trening)
