@@ -78,5 +78,14 @@ namespace Common
 
         [OperationContract]
         string DeleteTrener(int id);
+
+        [OperationContract]
+        string ChangeUserA(Admin admin);
+
+        [OperationContract]
+        string ChangeUserV(Vezbac vezbac);
+
+        [OperationContract]
+        string ChangeUserT(Trener trener);
     }
 }

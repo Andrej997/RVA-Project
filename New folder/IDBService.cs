@@ -13,7 +13,7 @@ using System.IO;
 
 
 
-public interface IDBService                 {
+public interface IDBService                  {
 
 	/// 
 	/// <param name="loginUser"></param>
@@ -87,4 +87,8 @@ public interface IDBService                 {
 	/// 
 	/// <param name="id"></param>
 	string DeleteTrener(int id);
+
+	/// 
+	/// <param name="osoba"></param>
+	string ChangeUser(object osoba);
 }//end IDBService

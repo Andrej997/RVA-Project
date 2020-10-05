@@ -108,4 +108,12 @@ public class CRUDUser {
 		return service.DeleteTrener(id);
 	}
 
+	/// 
+	/// <param name="osoba"></param>
+	/// <param name="service"></param>
+	public string ChangeUser(object osoba, IDBService service){
+
+		return service.ChangeUser(osoba);
+	}
+
 }//end CRUDUser

@@ -13,6 +13,7 @@ namespace Service
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Wait while service check database and prepares connection");
             var inicijalizacija = new InicijalizacijaPodataka();
             inicijalizacija.CheckDBData();
 

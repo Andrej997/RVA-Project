@@ -13,7 +13,7 @@ using System.IO;
 
 
 
-public interface IContract            {
+public interface IContract             {
 
 	/// 
 	/// <param name="admin"></param>
@@ -117,4 +117,8 @@ public interface IContract            {
 	/// 
 	/// <param name="id"></param>
 	string DeleteTrener(int id);
+
+	/// 
+	/// <param name="osoba"></param>
+	object ChangeUser(object osoba);
 }//end IContract

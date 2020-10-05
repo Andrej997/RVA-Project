@@ -46,6 +46,21 @@ namespace Common
             return CRUDUser.ChangeTrener(trener, proxy);
         }
 
+        public string ChangeUserA(Admin admin)
+        {
+            return CRUDUser.ChangeUser(admin, proxy);
+        }
+
+        public string ChangeUserT(Trener trener)
+        {
+            return CRUDUser.ChangeUser(trener, proxy);
+        }
+
+        public string ChangeUserV(Vezbac vezbac)
+        {
+            return CRUDUser.ChangeUser(vezbac, proxy);
+        }
+
         public string ChangeVezbac(Vezbac vezbac)
         {
             return CRUDUser.ChangeVezbac(vezbac, proxy);

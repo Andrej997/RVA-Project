@@ -514,4 +514,91 @@ public class DBService : IDBService {
 		return $"Successfully deleted trener";
 	}
 
+	/// 
+	/// <param name="osoba"></param>
+	public string ChangeUser(object osoba){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				if (osoba is Admin)
+				{
+					var user = commonContex.Admin
+						.FirstOrDefault(x => x.ID == (osoba as Admin).ID);
+					int result = CompareDate(user.LastChanged, (osoba as Admin).LastChanged);
+					if (result == 1)
+					{
+						(osoba as Admin).LastChanged = user.LastChanged;
+						return $"?+{user.LastChanged}";
+					}
+
+					user.Username = (osoba as Admin).Username;
+					user.FullName = (osoba as Admin).FullName;
+					user.LastChanged = DateTime.Now;
+
+					commonContex.Entry(user)
+						.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+					commonContex.SaveChanges();
+				}
+				else if (osoba is Vezbac)
+				{
+					var user = commonContex.Vezbac
+						.FirstOrDefault(x => x.ID == (osoba as Vezbac).ID);
+
+					int result = CompareDate(user.LastChanged, (osoba as Vezbac).LastChanged);
+					if (result == 1)
+					{
+						(osoba as Vezbac).LastChanged = user.LastChanged;
+						return $"?+{user.LastChanged}";
+					}
+
+					user.Username = (osoba as Vezbac).Username;
+					user.FullName = (osoba as Vezbac).FullName;
+					user.LastChanged = DateTime.Now;
+
+					commonContex.Entry(user)
+						.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+					commonContex.SaveChanges();
+				}
+				else if (osoba is Trener)
+				{
+					var user = commonContex.Trener
+						.FirstOrDefault(x => x.ID == (osoba as Trener).ID);
+					int result = CompareDate(user.LastChanged, (osoba as Trener).LastChanged);
+					if (result == 1)
+					{
+						(osoba as Trener).LastChanged = user.LastChanged;
+						return $"?+{user.LastChanged}";
+					}
+
+					user.Username = (osoba as Trener).Username;
+					user.FullName = (osoba as Trener).FullName;
+					user.LastChanged = DateTime.Now;
+
+					commonContex.Entry(user)
+						.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+					commonContex.SaveChanges();
+				}
+			}
+			catch (Exception e)
+			{
+				return e.Message;
+			}
+		}
+		return $"Promena je izvrsena za {(osoba as Osoba).FullName}!";
+	}
+
+	private int CompareDate(DateTime date1, DateTime date2)
+	{
+		if (date1.Year == date2.Year)
+			if (date1.Month == date2.Month)
+				if (date1.Day == date2.Day)
+					if (date1.Hour == date2.Hour)
+						if (date1.Minute == date2.Minute)
+							if (date1.Second == date2.Second)
+								return 0;
+		return 1;
+	}
+
 }//end DBService

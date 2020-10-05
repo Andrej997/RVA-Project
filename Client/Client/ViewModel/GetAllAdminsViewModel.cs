@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
 
 namespace Client.ViewModel
 {
@@ -64,6 +65,18 @@ namespace Client.ViewModel
             set { 
                 fullnameTB = value;
                 OnPropertyChanged("FullnameTB");
+            }
+        }
+
+        private DateTime lastChangeTB;
+
+        public DateTime LastChangeTB
+        {
+            get { return lastChangeTB; }
+            set
+            {
+                lastChangeTB = value;
+                OnPropertyChanged("LastChangeTB");
             }
         }
 
@@ -147,7 +160,7 @@ namespace Client.ViewModel
         private void DeleteA()
         {
             Error = InternalData.Data.service.DeleteAdmin(SelektovaniAdmin);
-            MessageBox.Show(Error);
+            System.Windows.MessageBox.Show(Error);
             Admini.Remove(SelektovaniAdmin);
         }
 
@@ -156,7 +169,7 @@ namespace Client.ViewModel
         private void DeleteV()
         {
             Error = InternalData.Data.service.DeleteVezbac(SelektovaniVezbac);
-            MessageBox.Show(Error);
+            System.Windows.MessageBox.Show(Error);
             Vezbaci.Remove(SelektovaniVezbac);
         }
 
@@ -168,6 +181,7 @@ namespace Client.ViewModel
             UsernameTB = SelektovaniAdmin.Username;
             RoleTB = "admin";
             IDTB = SelektovaniAdmin.ID.ToString();
+            LastChangeTB = SelektovaniAdmin.LastChanged;
         }
 
         public void ChangeV()
@@ -176,10 +190,12 @@ namespace Client.ViewModel
             UsernameTB = SelektovaniVezbac.Username;
             RoleTB = "vezbac";
             IDTB = SelektovaniVezbac.ID.ToString();
+            LastChangeTB = SelektovaniVezbac.LastChanged;
         }
 
         public void Change()
         {
+            string result;
             if (RoleTB == "admin")
             {
                 Admin admin = new Admin()
@@ -187,9 +203,30 @@ namespace Client.ViewModel
                     ID = Int32.Parse(IDTB),
                     FullName = FullnameTB,
                     Username = UsernameTB,
-                    Role = 0
+                    Role = 0,
+                    LastChanged = LastChangeTB
                 };
-                Error = InternalData.Data.service.ChangeAdmin(admin);
+                //Error = InternalData.Data.service.ChangeAdmin(admin);
+                result = InternalData.Data.service.ChangeUserA(admin);
+                var sss = result.Split('+');
+                if (sss[0] == "?")
+                {
+                    DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Da li zelite da pregazite prethodno nacinjene promene?", "Promena", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        admin.LastChanged = Convert.ToDateTime(sss[1]);
+                        Error = InternalData.Data.service.ChangeUserA(admin);
+                        System.Windows.MessageBox.Show(Error);
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        //nista
+                    }
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show(result);
+                }
             }
             else if(RoleTB == "vezbac")
             {
@@ -198,10 +235,32 @@ namespace Client.ViewModel
                     ID = Int32.Parse(IDTB),
                     FullName = FullnameTB,
                     Username = UsernameTB,
-                    Role = 1
+                    Role = 1,
+                    LastChanged = LastChangeTB
                 };
-                Error = InternalData.Data.service.ChangeVezbac(vezbac);
+                //Error = InternalData.Data.service.ChangeVezbac(vezbac);
+                result = InternalData.Data.service.ChangeUserV(vezbac);
+                var sss = result.Split('+');
+                if (sss[0] == "?")
+                {
+                    DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Da li zelite da pregazite prethodno nacinjene promene?", "Promena", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        vezbac.LastChanged = Convert.ToDateTime(sss[1]);
+                        Error = InternalData.Data.service.ChangeUserV(vezbac);
+                        System.Windows.MessageBox.Show(Error);
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        //nista
+                    }
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show(result);
+                }
             }
+            
         }
     }
 }
