@@ -18,6 +18,7 @@
         <Grid Grid.Row="1" Visibility="{Binding Visible}">
             <DataGrid Name="dataGridAdmins" ToolTip="Table with all admins." 
                       ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
+                      MaxHeight="180"
                       ItemsSource="{Binding Treninzi}" SelectedItem="{Binding SelektovaniTrening}"  
                       AutoGenerateColumns="False" IsReadOnly="True" Margin="32,59,395,221" >
                 <DataGrid.Columns>

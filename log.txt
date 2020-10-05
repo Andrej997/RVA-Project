@@ -531,3 +531,22 @@
 [10/5/2020 10:33:42 PM] - Promena je izvrsena za Vezbac JEdaN1!
 [10/5/2020 10:34:21 PM] - ?+10/5/2020 10:33:42 PM
 [10/5/2020 10:34:44 PM] - Promena je izvrsena za Vezbac JEdaNee!
+[10/5/2020 10:38:19 PM] - Got 2 admins from database
+[10/5/2020 10:38:19 PM] - Got 1 vezbace from database
+[10/5/2020 10:38:19 PM] - Got 4 trenera from database
+[10/5/2020 10:38:19 PM] - Got 4 trenera from database
+[10/5/2020 10:38:26 PM] - (ID=1,Role=0) - Admin [admin] logged in!
+[10/5/2020 10:39:02 PM] - Got 4 trenera from database
+[10/5/2020 10:39:23 PM] - Got 4 trenera from database
+[10/5/2020 10:39:24 PM] - Got 2 admins from database
+[10/5/2020 10:39:24 PM] - Got 1 vezbace from database
+[10/5/2020 10:40:24 PM] - Got 4 trenera from database
+[10/5/2020 10:40:25 PM] - Got 3 treninge for user 1 from database
+[10/5/2020 10:40:25 PM] - Got 4 trenera from database
+[10/5/2020 10:40:25 PM] - Got 3 treninge for user 1 from database
+[10/5/2020 10:41:22 PM] - Got 4 trenera from database
+[10/5/2020 10:41:22 PM] - Got 2 admins from database
+[10/5/2020 10:41:22 PM] - Got 1 vezbace from database
+[10/5/2020 10:41:23 PM] - Got 2 admins from database
+[10/5/2020 10:41:23 PM] - Got 1 vezbace from database
+[10/5/2020 10:41:32 PM] - Got 4 trenera from database

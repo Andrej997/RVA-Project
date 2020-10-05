@@ -35,6 +35,18 @@ namespace Client.ViewModel
             }
         }
 
+        private DateTime lastChangeTB;
+
+        public DateTime LastChangeTB
+        {
+            get { return lastChangeTB; }
+            set
+            {
+                lastChangeTB = value;
+                OnPropertyChanged("LastChangeTB");
+            }
+        }
+
         public Visibility Visible { get; set; }
         public string Error { get; set; }
 
@@ -116,6 +128,7 @@ namespace Client.ViewModel
             //Error = InternalData.Data.service.DeleteAdmin(SelektovaniTrener);
             //MessageBox.Show(Error);
             FullnameTB = SelektovaniTrener.FullName;
+            LastChangeTB = SelektovaniTrener.LastChanged;
         }
 
         private void ApplyChange()
@@ -124,11 +137,29 @@ namespace Client.ViewModel
             {
                 ID = SelektovaniTrener.ID,
                 Role = 2,
-                LastChanged = DateTime.Now,
-                FullName = FullnameTB
+                FullName = FullnameTB,
+                LastChanged = LastChangeTB
             };
-            Error = InternalData.Data.service.ChangeTrener(trener);
-            MessageBox.Show(Error);
+            var result = InternalData.Data.service.ChangeUserT(trener);
+            var sss = result.Split('+');
+            if (sss[0] == "?")
+            {
+                System.Windows.Forms.DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Da li zelite da pregazite prethodno nacinjene promene?", "Promena", System.Windows.Forms.MessageBoxButtons.YesNo);
+                if (dialogResult == System.Windows.Forms.DialogResult.Yes)
+                {
+                    trener.LastChanged = Convert.ToDateTime(sss[1]);
+                    Error = InternalData.Data.service.ChangeUserT(trener);
+                    System.Windows.MessageBox.Show(Error);
+                }
+                else if (dialogResult == System.Windows.Forms.DialogResult.No)
+                {
+                    //nista
+                }
+            }
+            else
+            {
+                System.Windows.MessageBox.Show(result);
+            }
         }
 
         private void DeleteT()

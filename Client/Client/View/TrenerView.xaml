@@ -15,6 +15,7 @@
         <TextBlock x:Name="label4" Foreground="Red" TextWrapping="Wrap" Text="{Binding Error}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="250" Height="97"/>
         <Grid Grid.Row="1" Visibility="{Binding Visible}">
             <DataGrid Name="dataGridTreneri" ToolTip="Table with all trenere." 
+                      MaxHeight="290"
                       ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
                       ItemsSource="{Binding Treneri}" SelectedItem="{Binding SelektovaniTrener}"  
                       AutoGenerateColumns="False" IsReadOnly="True" Margin="46,61,291,146" >

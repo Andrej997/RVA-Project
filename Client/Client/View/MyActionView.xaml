@@ -14,9 +14,9 @@
     <Grid>
         <DataGrid Name="dataGridAdmin1s" ToolTip="Table with all admins." 
                       ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
-                      MaxHeight="330"
+                      MaxHeight="290"
                       ItemsSource="{Binding MyActions}" 
-                      AutoGenerateColumns="False" IsReadOnly="True" Margin="58,83,75,44" >
+                      AutoGenerateColumns="False" IsReadOnly="True" Margin="58,83,75,100" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Timestamp:" Width="*" Binding="{Binding Timestamp}"/>
                 <DataGridTextColumn Header="Message:" Width="*" Binding="{Binding Message}"/>

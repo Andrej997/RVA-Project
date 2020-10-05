@@ -17,6 +17,7 @@
         <Grid Grid.Row="1" Visibility="{Binding Visible}">
             <DataGrid Name="dataGridAdmins" ToolTip="Table with all admins." 
                       ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
+                      MaxHeight="140"
                       ItemsSource="{Binding Admini}" SelectedItem="{Binding SelektovaniAdmin}"  
                       AutoGenerateColumns="False" IsReadOnly="True" Margin="75,80,430,225" >
                 <DataGrid.Columns>
@@ -32,6 +33,7 @@
             <DataGrid Name="dataGridVezbaci" ToolTip="Table with all vezbaci." 
                       ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
                       ItemsSource="{Binding Vezbaci}" SelectedItem="{Binding SelektovaniVezbac}" 
+                      MaxHeight="140"
                       AutoGenerateColumns="False" IsReadOnly="True" Margin="78,239,427,66" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id:" Width="*" Binding="{Binding ID}"/>
