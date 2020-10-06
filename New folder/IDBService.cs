@@ -13,7 +13,7 @@ using System.IO;
 
 
 
-public interface IDBService                  {
+public interface IDBService                   {
 
 	/// 
 	/// <param name="loginUser"></param>
@@ -91,4 +91,9 @@ public interface IDBService                  {
 	/// 
 	/// <param name="osoba"></param>
 	string ChangeUser(object osoba);
+
+	/// 
+	/// <param name="type"></param>
+	/// <param name="input"></param>
+	string SearchUser(string type, string input);
 }//end IDBService

@@ -116,4 +116,12 @@ public class CRUDUser {
 		return service.ChangeUser(osoba);
 	}
 
+	/// 
+	/// <param name="type"></param>
+	/// <param name="input"></param>
+	public string SearchUser(string type, string input, IDBService service)
+	{
+		return service.SearchUser(type, input);
+	}
+
 }//end CRUDUser

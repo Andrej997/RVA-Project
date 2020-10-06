@@ -589,3 +589,52 @@
 [10/6/2020 7:44:58 PM] - Got 4 trenera from database
 [10/6/2020 7:45:00 PM] - Got 2 admins from database
 [10/6/2020 7:45:00 PM] - Got 1 vezbace from database
+[10/6/2020 7:49:08 PM] - Got 2 admins from database
+[10/6/2020 7:49:08 PM] - Got 1 vezbace from database
+[10/6/2020 7:49:08 PM] - Got 4 trenera from database
+[10/6/2020 7:49:08 PM] - Got 4 trenera from database
+[10/6/2020 7:49:14 PM] - (ID=1,Role=0) - Admin [admin] logged in!
+[10/6/2020 7:49:28 PM] - Got 2 admins from database
+[10/6/2020 7:49:28 PM] - Got 1 vezbace from database
+[10/6/2020 7:49:30 PM] - Got 4 trenera from database
+[10/6/2020 7:49:41 PM] - Trener successfully created!
+[10/6/2020 7:50:10 PM] - Got 2 admins from database
+[10/6/2020 7:50:10 PM] - Got 1 vezbace from database
+[10/6/2020 7:50:11 PM] - Got 5 trenera from database
+[10/6/2020 7:50:30 PM] - Promena je izvrsena za Trener Ses!
+[10/6/2020 7:50:34 PM] - Got 5 trenera from database
+[10/6/2020 7:50:38 PM] - Successfully deleted trener
+[10/6/2020 7:50:41 PM] - Got 2 admins from database
+[10/6/2020 7:50:41 PM] - Got 1 vezbace from database
+[10/6/2020 7:50:42 PM] - Got 4 trenera from database
+[10/6/2020 8:25:36 PM] - Got 2 admins from database
+[10/6/2020 8:25:36 PM] - Got 1 vezbace from database
+[10/6/2020 8:25:36 PM] - Got 4 trenera from database
+[10/6/2020 8:25:36 PM] - Got 4 trenera from database
+[10/6/2020 8:25:43 PM] - Got 4 trenera from database
+[10/6/2020 8:25:45 PM] - Got 2 admins from database
+[10/6/2020 8:25:45 PM] - Got 1 vezbace from database
+[10/6/2020 8:46:00 PM] - Got 2 admins from database
+[10/6/2020 8:46:00 PM] - Got 1 vezbace from database
+[10/6/2020 8:46:01 PM] - Got 4 trenera from database
+[10/6/2020 8:46:01 PM] - Got 4 trenera from database
+[10/6/2020 8:46:06 PM] - Got 2 admins from database
+[10/6/2020 8:46:06 PM] - Got 1 vezbace from database
+[10/6/2020 8:46:11 PM] - No user with that input
+[10/6/2020 8:47:47 PM] - Got 2 admins from database
+[10/6/2020 8:47:47 PM] - Got 1 vezbace from database
+[10/6/2020 8:47:47 PM] - Got 4 trenera from database
+[10/6/2020 8:47:47 PM] - Got 4 trenera from database
+[10/6/2020 8:47:54 PM] - Got 2 admins from database
+[10/6/2020 8:47:54 PM] - Got 1 vezbace from database
+[10/6/2020 8:48:01 PM] - 1?admin?Glavni Admin?0?1/1/0001 12:00:00 AM
+[10/6/2020 8:55:42 PM] - Got 2 admins from database
+[10/6/2020 8:55:42 PM] - Got 1 vezbace from database
+[10/6/2020 8:55:43 PM] - Got 4 trenera from database
+[10/6/2020 8:55:43 PM] - Got 4 trenera from database
+[10/6/2020 8:55:45 PM] - Got 2 admins from database
+[10/6/2020 8:55:45 PM] - Got 1 vezbace from database
+[10/6/2020 8:55:49 PM] - 1?admin?Glavni Admin?administrator?1/1/0001 12:00:00 AM
+[10/6/2020 8:56:16 PM] - 1?admin?Glavni Admin?administrator?1/1/0001 12:00:00 AM
+[10/6/2020 8:56:22 PM] - No user with that input
+[10/6/2020 8:56:35 PM] - 1?vezbac1?Vezbac JEdaNee?vezbac?10/5/2020 10:34:44 PM

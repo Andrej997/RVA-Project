@@ -60,6 +60,20 @@
                     Command="{Binding ApplyChange}"
                     HorizontalAlignment="Left" Margin="596,264,0,0" 
                     VerticalAlignment="Top" Width="120" Height="25"/>
+            <Label x:Name="label_Copy2" Content="Search" HorizontalAlignment="Left" Margin="406,79,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" 
+                      SelectedValue="{Binding SelectSearch}"
+                      Margin="406,110,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem>Username</ComboBoxItem>
+                <ComboBoxItem>Fullname</ComboBoxItem>
+            </ComboBox>
+            <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="23" 
+                Margin="406,146,0,0" TextWrapping="Wrap" Text="{Binding InputSearch}" 
+                VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="button_Copy" Content="SEARCH" 
+                Command="{Binding Search}"
+                HorizontalAlignment="Left" Margin="406,189,0,0" 
+                VerticalAlignment="Top" Width="120" Height="25"/>
         </Grid>
         <Button Content="DELETE ADMIN" ToolTip="Deleting selected object from admin table." 
                 Height="30" Command="{Binding DeleteAdmin}" Margin="379,139,308,281"

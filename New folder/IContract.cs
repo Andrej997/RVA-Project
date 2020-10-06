@@ -13,7 +13,7 @@ using System.IO;
 
 
 
-public interface IContract             {
+public interface IContract              {
 
 	/// 
 	/// <param name="admin"></param>
@@ -121,4 +121,21 @@ public interface IContract             {
 	/// 
 	/// <param name="osoba"></param>
 	object ChangeUser(object osoba);
+
+	/// 
+	/// <param name="admin"></param>
+	string ChangeUserA(Admin admin);
+
+	/// 
+	/// <param name="trener"></param>
+	string ChangeUserT(Trener trener);
+
+	/// 
+	/// <param name="vezbac"></param>
+	string ChangeUserV(Vezbac vezbac);
+
+	/// 
+	/// <param name="type"></param>
+	/// <param name="input"></param>
+	string SearchUser(string type, string input);
 }//end IContract

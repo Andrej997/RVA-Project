@@ -230,4 +230,14 @@ public class Proxy : IDBService {
 		return message;
 	}
 
+	/// 
+	/// <param name="type"></param>
+	/// <param name="input"></param>
+	public string SearchUser(string type, string input){
+
+		var message = realService.SearchUser(type, input);
+		LogAccess($"{message}");
+		return message;
+	}
+
 }//end Proxy

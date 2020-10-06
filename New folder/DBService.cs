@@ -601,4 +601,57 @@ public class DBService : IDBService {
 		return 1;
 	}
 
+	/// 
+	/// <param name="type"></param>
+	/// <param name="input"></param>
+	public string SearchUser(string type, string input){
+
+		using (CommonContex commonContex = new CommonContex())
+		{
+			try
+			{
+				if (type == "Fullname")
+				{
+					var user = commonContex.Admin
+						.FirstOrDefault(x => x.FullName == input);
+					if (user != null)
+						return $"{user.ID}?{user.Username}?{user.FullName}?administrator?{user.LastChanged}";
+
+					var userV = commonContex.Vezbac
+						.FirstOrDefault(x => x.FullName == input);
+					if (userV != null)
+						return $"{userV.ID}?{userV.Username}?{userV.FullName}?vezbac?{userV.LastChanged}";
+
+					var userT = commonContex.Trener
+						.FirstOrDefault(x => x.FullName == input);
+					if (userT != null)
+						return $"{userT.ID}?{userT.Username}?{userT.FullName}?trener?{userT.LastChanged}";
+				}
+				else if (type == "Username")
+				{
+					var user = commonContex.Admin
+						.FirstOrDefault(x => x.Username == input);
+					if (user != null)
+						return $"{user.ID}?{user.Username}?{user.FullName}?administrator?{user.LastChanged}";
+
+					var userV = commonContex.Vezbac
+						.FirstOrDefault(x => x.Username == input);
+					if (userV != null)
+						return $"{userV.ID}?{userV.Username}?{userV.FullName}?vezbac?{userV.LastChanged}";
+
+					var userT = commonContex.Trener
+						.FirstOrDefault(x => x.Username == input);
+					if (userT != null)
+						return $"{userT.ID}?{userT.Username}?{userT.FullName}?trener?{userT.LastChanged}";
+				}
+			}
+			catch (Exception e)
+			{
+				logger.LogError(e.Message);
+				return $"{e.Message}";
+			}
+		}
+		return $"No user with that input";
+	}
+
 }//end DBService

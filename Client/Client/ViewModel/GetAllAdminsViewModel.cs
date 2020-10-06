@@ -99,6 +99,32 @@ namespace Client.ViewModel
             }
         }
 
+        private string selectSearch;
+
+        public string SelectSearch
+        {
+            get { return selectSearch; }
+            set
+            {
+                selectSearch = value;
+                OnPropertyChanged("SelectSearch");
+            }
+        }
+
+        private string inputSearch;
+
+        public string InputSearch
+        {
+            get { return inputSearch; }
+            set
+            {
+                inputSearch = value;
+                OnPropertyChanged("InputSearch");
+            }
+        }
+
+        public MyICommand Search { get; set; }
+
         public GetAllAdminsViewModel()
         {
             if (InternalData.Data.IsLoggedIn())
@@ -137,6 +163,29 @@ namespace Client.ViewModel
             ChangeVezbac = new MyICommand(ChangeV, CanUseV);
 
             ApplyChange = new MyICommand(Change);
+
+            Search = new MyICommand(SearchUser);
+        }
+
+        private void SearchUser()
+        {
+            if ((SelectSearch != null || SelectSearch != "") && (InputSearch != null || InputSearch != ""))
+            {
+                var type = SelectSearch.Split(':')[1].Split(' ')[1];
+                var retval = InternalData.Data.service.SearchUser(type, InputSearch);
+                var splits = retval.Split('?');
+                if (splits.Length == 5)
+                {
+                    System.Windows.MessageBox.Show($"ID:\t\t{splits[0]}\n" +
+                        $"Username:\t{splits[1]}\n" +
+                        $"Fullname:\t{splits[2]}\n" +
+                        $"Role:\t\t{splits[3]}\n" +
+                        $"Last changed:\t{splits[4]}");
+                }
+                else
+                    System.Windows.MessageBox.Show(retval);
+            }
+                
         }
 
         private void GetAdmins()

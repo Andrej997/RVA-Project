@@ -151,6 +151,11 @@ namespace Common
             return CRUDTrening.Redo();
         }
 
+        public string SearchUser(string type, string input)
+        {
+            return CRUDUser.SearchUser(type, input, proxy);
+        }
+
         public string Undo()
         {
             return CRUDTrening.Undo();

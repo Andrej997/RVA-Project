@@ -27,6 +27,7 @@ namespace Service
             binding.OpenTimeout = TimeSpan.FromMinutes(2);
             binding.SendTimeout = TimeSpan.FromMinutes(2);
             binding.ReceiveTimeout = TimeSpan.FromMinutes(10);
+            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
 
             ServiceHost host = new ServiceHost(typeof(Contract));
             try

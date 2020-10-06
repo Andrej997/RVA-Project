@@ -36,11 +36,11 @@
             <Button Content="DELETE TRENER"
                 Height="30" Command="{Binding DeleteTrener}" Margin="596,204,84,216"
                 Visibility="{Binding Visible}" Background="Red"/>
-            <Button Content="CHANGE VEZBAC"
+            <Button Content="CHANGE TRENER"
                 Height="30" Command="{Binding ChangeTrener}" Margin="596,274,84,146"
                 Visibility="{Binding Visible}" Background="LightGray"/>
             <Button Content="ACCEPT CHANGE"
-                Height="30" Command="{Binding AppyChangeTrener}" Margin="594,328,86,92"
+                Height="30" Command="{Binding AppyChangeTrener}" Margin="595,328,86,92"
                 Visibility="{Binding Visible}" Background="LightBlue"/>
             <!--Button Content="REFRESH"
                 Height="30" Command="{Binding RefreshTrener}" Margin="633,59,47,361"

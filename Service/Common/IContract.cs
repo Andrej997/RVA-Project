@@ -87,5 +87,8 @@ namespace Common
 
         [OperationContract]
         string ChangeUserT(Trener trener);
+
+        [OperationContract]
+        string SearchUser(string type, string input);
     }
 }
