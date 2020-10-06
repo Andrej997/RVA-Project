@@ -550,3 +550,42 @@
 [10/5/2020 10:41:23 PM] - Got 2 admins from database
 [10/5/2020 10:41:23 PM] - Got 1 vezbace from database
 [10/5/2020 10:41:32 PM] - Got 4 trenera from database
+[10/5/2020 10:46:35 PM] - Got 2 admins from database
+[10/5/2020 10:46:35 PM] - Got 1 vezbace from database
+[10/5/2020 10:46:35 PM] - Got 4 trenera from database
+[10/5/2020 10:46:35 PM] - Got 4 trenera from database
+[10/5/2020 10:46:43 PM] - Got 2 admins from database
+[10/5/2020 10:46:43 PM] - Got 1 vezbace from database
+[10/5/2020 10:46:43 PM] - Got 4 trenera from database
+[10/5/2020 10:46:43 PM] - Got 4 trenera from database
+[10/5/2020 10:46:48 PM] - (ID=1,Role=0) - Admin [admin] logged in!
+[10/5/2020 10:46:51 PM] - Got 4 trenera from database
+[10/5/2020 10:47:00 PM] - (ID=1,Role=0) - Admin [admin] logged in!
+[10/5/2020 10:47:02 PM] - Got 4 trenera from database
+[10/5/2020 10:47:11 PM] - Promena je izvrsena za Trener Cetiri4!
+[10/5/2020 10:47:25 PM] - ?+10/5/2020 10:47:11 PM
+[10/5/2020 10:47:30 PM] - Promena je izvrsena za Trener Cetiri 44!
+[10/5/2020 10:47:35 PM] - Got 4 trenera from database
+[10/5/2020 10:47:40 PM] - Got 4 trenera from database
+[10/6/2020 7:43:29 PM] - Got 2 admins from database
+[10/6/2020 7:43:29 PM] - Got 1 vezbace from database
+[10/6/2020 7:43:29 PM] - Got 4 trenera from database
+[10/6/2020 7:43:29 PM] - Got 4 trenera from database
+[10/6/2020 7:43:48 PM] - (ID=1,Role=0) - Admin [admin] logged in!
+[10/6/2020 7:43:53 PM] - Got 4 trenera from database
+[10/6/2020 7:43:54 PM] - Got 3 treninge for user 1 from database
+[10/6/2020 7:43:58 PM] - (ID=1,Role=0) - Successfully added trening to admin (1)
+[10/6/2020 7:44:02 PM] - (ID=1,Role=0) - Successfully added trening to admin (1)
+[10/6/2020 7:44:05 PM] - (ID=1,Role=0) - Successfully added trening to admin (1)
+[10/6/2020 7:44:08 PM] - (ID=1,Role=0) - Successfully added trening to admin (1)
+[10/6/2020 7:44:10 PM] - (ID=1,Role=0) - Successfully added trening to admin (1)
+[10/6/2020 7:44:12 PM] - (ID=1,Role=0) - Successfully added trening to admin (1)
+[10/6/2020 7:44:23 PM] - (ID=1,Role=0) - Successfully removed trening to admin (1)
+[10/6/2020 7:44:26 PM] - (ID=1,Role=0) - Successfully removed trening to admin (1)
+[10/6/2020 7:44:30 PM] - (ID=1,Role=0) - Successfully removed trening to admin (1)
+[10/6/2020 7:44:33 PM] - Got 4 trenera from database
+[10/6/2020 7:44:34 PM] - Got 4 trenera from database
+[10/6/2020 7:44:34 PM] - Got 6 treninge for user 1 from database
+[10/6/2020 7:44:58 PM] - Got 4 trenera from database
+[10/6/2020 7:45:00 PM] - Got 2 admins from database
+[10/6/2020 7:45:00 PM] - Got 1 vezbace from database

@@ -29,28 +29,32 @@
             <Button x:Name="button" Content="Create Trening" HorizontalAlignment="Left" 
                     Margin="687,204,0,0" VerticalAlignment="Top" Width="75"
                     Command="{Binding CreateTrening}"/>
-            
+
             <Button x:Name="button1" Content="Undo" HorizontalAlignment="Left" 
                     Margin="32,259,0,0" VerticalAlignment="Top" Width="75"
                     Command="{Binding UndoTrening}"/>
-            
+
             <Button x:Name="button2" Content="Redo" HorizontalAlignment="Left" 
                     Margin="137,259,0,0" VerticalAlignment="Top" Width="75"
                     Command="{Binding RedoTrening}"/>
-            
+
             <Button x:Name="button3" Content="DeleteTrening" HorizontalAlignment="Left" 
                     Margin="87,284,0,0" VerticalAlignment="Top" Width="75"
                     Command="{Binding DeleteTrening}"/>
 
             <DataGrid Name="dataGridAdmin1s" ToolTip="Table with all admins." 
                       ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
+                      MaxHeight="170"
                       ItemsSource="{Binding Treneri}" SelectedItem="{Binding SelektovaniTrener}"  
                       AutoGenerateColumns="False" IsReadOnly="True" Margin="472,186,118,94" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Trener:" Width="*" Binding="{Binding FullName}"/>
                 </DataGrid.Columns>
             </DataGrid>
-            
+            <Button x:Name="button3_Copy" Content="DuplicateTrening" HorizontalAlignment="Left" 
+                Margin="307,259,0,0" VerticalAlignment="Top" Width="98"
+                Command="{Binding Duplicate}"/>
+
         </Grid>
     </Grid>
 </UserControl>

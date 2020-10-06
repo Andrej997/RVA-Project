@@ -38,6 +38,7 @@ namespace Client.ViewModel
         public MyICommand DeleteTrening { get; set; }
         public MyICommand UndoTrening { get; set; }
         public MyICommand RedoTrening { get; set; }
+        public MyICommand Duplicate { get; set; }
 
         public string Error { get; set; }
 
@@ -60,8 +61,15 @@ namespace Client.ViewModel
             UndoTrening = new MyICommand(Undo);
             RedoTrening = new MyICommand(Redo);
 
+            Duplicate = new MyICommand(DuplicateA);
+
             GetTrenere();
             GetTreninge();
+        }
+
+        private void DuplicateA()
+        {
+            Create();
         }
 
         private void GetTrenere()
